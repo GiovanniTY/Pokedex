@@ -1,26 +1,13 @@
 <?php
-function getPokemonDataById($id) {
-    $url = "https://pokeapi.co/api/v2/pokemon/" . $id;
+include('engine.php'); // Include il file di connessione al database
 
-    $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, $url);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-
-    $response = curl_exec($ch);
-    curl_close($ch);
-
-    if ($response === false) {
-        echo "Failed to fetch data for Pokemon ID: $id";
-        return null;
-    }
-
-    $data = json_decode($response, true);
-
-    // Debugging output
-    if (is_null($data)) {
-        echo "Failed to decode JSON for Pokemon ID: $id";
-    }
-
-    return $data;
+try {
+    // Query per selezionare i dati dei Pokémon
+    $stmt = $bdd->prepare('SELECT * FROM Pokemon');
+    $stmt->execute();
+    $pokemonList = $stmt->fetchAll(PDO::FETCH_ASSOC);
+} catch (PDOException $e) {
+    echo '<script>alert("Errore: ' . $e->getMessage() . '");</script>';
+    exit;
 }
 ?>
