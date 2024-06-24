@@ -84,7 +84,7 @@ if (isset($_POST['register'])) {
 </head>
 
 <body>
-    <a href="../index.php">Return to homepage</a>
+    <a href="./login.php">Log in</a>
     <h1>Register</h1>
     <form action="<?php $_SERVER['PHP_SELF'] ?>" method="POST">
         <label for="username">Username</label>
