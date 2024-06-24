@@ -35,6 +35,7 @@ if (isset($_POST['register'])){
     <title>Register</title>
 </head>
 <body>
+<a href="./index.php">Return to homepage</a>
     <h1>Register</h1>
     <form action="<?php $_SERVER['PHP_SELF'] ?>" method="POST">
         <label for="username">Username</label>
