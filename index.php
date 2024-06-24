@@ -13,8 +13,10 @@
         <a href="../login-register/register.php">Register</a>
 </nav>
     <main>
-        <img id="logo" src="assets/img/logo.png" alt="">
-        <button id="dark-mode-toggle">Toggle Dark Mode</button>
+        <img id="logo" src="assets/img/logo.png" alt="logo">
+        <button id="dark-mode-toggle">
+            <img id="pokeball" src="assets/img/pokeball2.png" alt="pokeball">
+        </button>
         <div class="pokedex-container">
             <?php
             include('function.php'); 
