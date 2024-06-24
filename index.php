@@ -23,17 +23,17 @@ session_start();
         if (!isset($_SESSION["user"])) {
         ?>
 
-            <a href="../login-register/login.php">Login</a>
+            <a href="./login-register/login.php">Login</a>
         <?php
         }
         if (isset($_SESSION["user"])) {
         ?>
-            <a href="../login-register/logout.php">Logout</a>
+            <a href="./login-register/logout.php">Logout</a>
         <?php   }
         if (!isset($_SESSION["user"])) {
 
         ?>
-            <a href="../login-register/register.php">Register</a>
+            <a href="./login-register/register.php">Register</a>
         <?php } ?>
     </nav>
     <main>
