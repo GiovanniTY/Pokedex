@@ -10,6 +10,13 @@
   width: 100px;
 }
 
+#pokemon {
+  width: 90px;
+  height: 60px;
+  margin-right: 900px;
+  transition: transform 1s ease;
+}
+
 main {
   display: flex;
   justify-content: center;
