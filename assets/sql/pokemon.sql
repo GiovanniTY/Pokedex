@@ -1,6 +1,7 @@
 -- Création de la table Pokemon
+DROP TABLE IF EXISTS Pokemon;
 CREATE TABLE IF NOT EXISTS Pokemon (
-    id INTEGER PRIMARY KEY,
+    id INTEGER PRIMARY KEY AUTO_INCREMENT,
     pokedexId INTEGER,
     name TEXT,
     image TEXT,
@@ -22,8 +23,9 @@ CREATE TABLE IF NOT EXISTS Pokemon (
 );
 
 -- Création de la table PokemonResistance
+DROP TABLE IF EXISTS PokemonResistance;
 CREATE TABLE IF NOT EXISTS PokemonResistance (
-    id INTEGER PRIMARY KEY,
+    id INTEGER PRIMARY KEY AUTO_INCREMENT,
     pokemon_id INTEGER,
     resistance_name TEXT,
     damage_multiplier REAL,
