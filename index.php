@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pokédex</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css" type="text/css">
 </head>
 <body>
 <nav>
@@ -13,7 +13,7 @@
         <a href="./login-register/register.php">Register</a>
 </nav>
     <main>
-    <img id="logo"src="/assets/img/logo.png" alt="">
+    <img id="logo"src="assets/img/logo.png" alt="">
     <button id="dark-mode-toggle">Toggle Dark Mode</button>
 
     <?php
@@ -46,7 +46,8 @@
 
     echo '</div>';
     ?>
-
+     </main>
+<footer>
     <div class="pagination">
         <?php if ($page > 1): ?>
             <a href="index.php?page=<?php echo $page - 1; ?>">&laquo; Previous</a>
@@ -58,7 +59,8 @@
             <a href="index.php?page=<?php echo $page + 1; ?>">Next &raquo;</a>
         <?php endif; ?>
     </div>
-    </main>
-    <script src="/assets/js/script.js"></script>
+   
+    </footer>
+    <script src="assets/js/script.js" type="text/javascript"></script>
 </body>
 </html>
