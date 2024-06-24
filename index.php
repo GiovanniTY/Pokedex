@@ -24,7 +24,7 @@
                     <img src="<?php echo $pokemon['image']; ?>" alt="<?php echo $pokemon['name']; ?>">
                     <h2><?php echo $pokemon['name']; ?></h2>
                     <p>ID: <?php echo $pokemon['pokedexId']; ?></p>
-                    <p>Tipo: <?php echo $pokemon['type1']; ?><?php if (!empty($pokemon['type2'])) echo ', ' . $pokemon['type2']; ?></p>
+                    <p>Tipe: <?php echo $pokemon['type1']; ?><?php if (!empty($pokemon['type2'])) echo ', ' . $pokemon['type2']; ?></p>
                 </div>
             <?php endforeach; ?>
         </div>
