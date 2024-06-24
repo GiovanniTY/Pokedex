@@ -7,7 +7,9 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+    <main>
     <img id="logo"src="/assets/img/logo.png" alt="">
+    <button id="dark-mode-toggle">Toggle Dark Mode</button>
 
     <?php
     // Include the file with the function to get Pokémon data
@@ -51,5 +53,7 @@
             <a href="index.php?page=<?php echo $page + 1; ?>">Next &raquo;</a>
         <?php endif; ?>
     </div>
+    </main>
+    <script src="/assets/js/script.js"></script>
 </body>
 </html>

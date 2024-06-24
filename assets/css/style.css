@@ -1,4 +1,32 @@
 #logo {
   width: 500px;
-  height: 200px;
+  height: 150px;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.pokemon-list {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  overflow-y: none;
+  overflow-x: none;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+.pokemon-list .pokemon-item {
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 200px;
+}
+
+body {
+  background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
 }/*# sourceMappingURL=style.css.map */
