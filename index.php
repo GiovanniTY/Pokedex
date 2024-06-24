@@ -8,9 +8,9 @@
 </head>
 <body>
 <nav>
-        <a href="./login-register/login.php">Login</a>
-        <a href="./login-register/logout.php">Logout</a>
-        <a href="./login-register/register.php">Register</a>
+        <a href="../login-register/login.php">Login</a>
+        <a href="../login-register/logout.php">Logout</a>
+        <a href="../login-register/register.php">Register</a>
 </nav>
     <main>
     <img id="logo"src="/assets/img/logo.png" alt="">
