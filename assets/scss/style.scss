@@ -21,7 +21,6 @@ body.dark{
 }
 
 nav {
-    background: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
     height: 60px; 
     display: flex;
     justify-content: flex-end; 
@@ -36,7 +35,6 @@ nav {
     }
 }
 nav.dark{
-    background-image: linear-gradient(to right, #434343 0%, black 100%);
     a{
         color: white;
     }

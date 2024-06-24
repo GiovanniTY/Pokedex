@@ -24,3 +24,30 @@ function toggleDarkMode() {
 document.addEventListener('DOMContentLoaded', function() {
     toggleDarkMode();
 });
+
+const pokemonImage = document.getElementById('pokemon');
+let rotation = 0;
+let rotateInterval;
+
+function rotateImage() {
+    rotation += 90;
+    pokemonImage.style.transform = `rotate(${rotation}deg)`;
+
+    // Fermare l'intervallo dopo una rotazione completa (360 gradi)
+    if (rotation >= 90) {
+        clearInterval(rotateInterval);
+        rotation = 0; // Ripristinare l'angolo di rotazione per future rotazioni
+        setTimeout(() => {
+            pokemonImage.style.transform = 'rotate(0deg)';
+            startRotation(); // Riprendere la rotazione dopo un breve ritardo
+        }, 5000); // Attendere 2 secondi prima di riavviare la rotazione
+    }
+}
+
+function startRotation() {
+    rotateInterval = setInterval(rotateImage, 5000); // Esegui la rotazione ogni 5 secondi
+}
+
+// Avvia la rotazione iniziale
+startRotation();
+
