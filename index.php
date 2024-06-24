@@ -13,8 +13,10 @@
         <a href="./login-register/register.php">Register</a>
     </nav>
     <main>
-        <img id="logo" src="assets/img/logo.png" alt="">
-        <button id="dark-mode-toggle">Toggle Dark Mode</button>
+        <img id="logo" src="assets/img/logo.png" alt="logo">
+        <button id="dark-mode-toggle">
+            <img id="pokeball" src="assets/img/pokeball2.png" alt="pokeball">
+        </button>
         <div class="pokedex-container">
             <?php
             include('function.php'); 
@@ -24,7 +26,7 @@
                     <img src="<?php echo $pokemon['image']; ?>" alt="<?php echo $pokemon['name']; ?>">
                     <h2><?php echo $pokemon['name']; ?></h2>
                     <p>ID: <?php echo $pokemon['pokedexId']; ?></p>
-                    <p>Tipo: <?php echo $pokemon['type1']; ?><?php if (!empty($pokemon['type2'])) echo ', ' . $pokemon['type2']; ?></p>
+                    <p>Tipe: <?php echo $pokemon['type1']; ?><?php if (!empty($pokemon['type2'])) echo ', ' . $pokemon['type2']; ?></p>
                 </div>
             <?php endforeach; ?>
         </div>
