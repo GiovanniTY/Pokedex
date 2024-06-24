@@ -2,6 +2,7 @@ function toggleDarkMode() {
     const darkModeToggle = document.getElementById('dark-mode-toggle');
     const body = document.body;
     const main = document.querySelector('main');
+    const nav = document.querySelector('nav')
     const pokeballImage = document.getElementById('pokeball');
     
     const darkModeImageSrc = 'assets/img/pokeball2.png'; 
@@ -10,6 +11,7 @@ function toggleDarkMode() {
     darkModeToggle.addEventListener('click', function() {
         const isDarkMode = body.classList.toggle('dark');
         main.classList.toggle('dark');
+        nav.classList.toggle('dark');
         
         if (isDarkMode) {
             pokeballImage.src = darkModeImageSrc;
