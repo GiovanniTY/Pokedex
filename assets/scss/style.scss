@@ -1,2 +1,9 @@
 @import 'login.scss';
 @import 'register.scss';
+@import '_img';
+@import '_main';
+@import '_card';
+
+body{
+ background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);;
+}
