@@ -48,9 +48,21 @@ session_start();
             foreach ($pokemonList as $pokemon) : ?>
                 <div class="pokemon-card">
                     <img src="<?php echo $pokemon['image']; ?>" alt="<?php echo $pokemon['name']; ?>">
+                    <p class="pokedex-id"><?php if ($pokemon['pokedexId'] < 10) {
+                        echo '#000' . $pokemon['pokedexId'];
+                    } else if ($pokemon['pokedexId'] < 100) {
+                        echo '#00' . $pokemon['pokedexId'];
+                    } else if($pokemon['pokedexId']<200){
+                        echo '#0'. $pokemon['pokedexId'];
+                    }?></p>
                     <h2><?php echo $pokemon['name']; ?></h2>
-                    <p>ID: <?php echo $pokemon['pokedexId']; ?></p>
-                    <p>Type: <?php echo $pokemon['type1']; ?><?php if (!empty($pokemon['type2'])) echo ', ' . $pokemon['type2']; ?></p>
+                    <div class="type">
+                        <span class="<?php echo strtolower($pokemon['type1']); ?>"><?php echo $pokemon['type1']; ?></span>
+                        <?php if (!empty($pokemon['type2'])) : ?>
+                        <span class="<?php echo strtolower($pokemon['type2']); ?>"><?php echo $pokemon['type2']; ?></span>
+                        <?php endif; ?>
+                    </div>
+
                 </div>
             <?php endforeach; ?>
         </div>

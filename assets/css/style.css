@@ -1,3 +1,4 @@
+@charset "UTF-8";
 #logo {
   width: 500px;
   height: 150px;
@@ -15,21 +16,154 @@ main {
   flex-direction: column;
 }
 
-.pokemon-list {
+.pokedex-container {
   display: flex;
   flex-direction: row;
-  gap: 20px;
-  overflow-y: none;
-  overflow-x: none;
   flex-wrap: wrap;
-  margin-top: 30px;
+  align-items: center;
+  justify-content: center;
 }
-.pokemon-list .pokemon-item {
-  background-color: #ffffff;
-  border-radius: 15px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  width: 200px;
+.pokedex-container .pokemon-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #FAF9F9;
+  border-radius: 20px;
+  margin: 50px 20px;
+  width: 300px;
+  transition: transform 0.3s ease;
+}
+.pokedex-container .pokemon-card img {
+  width: 50%;
+  margin-top: -100px;
+}
+.pokedex-container .pokemon-card p, .pokedex-container .pokemon-card h2, .pokedex-container .pokemon-card .type {
+  margin: 5px 0;
+}
+.pokedex-container .pokemon-card .pokedex-id {
+  font-weight: bold;
+  font-size: 20px;
+}
+.pokedex-container .pokemon-card .type {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+.pokedex-container .pokemon-card .type span {
+  border: 1px solid #333;
+  border-radius: 5px;
+  padding: 8px;
+  font-weight: bold;
+}
+.pokedex-container .pokemon-card:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+#dark-mode-toggle {
+  margin-bottom: 150px;
+}
+
+/* Plante */
+.plante {
+  background-color: #78C850; /* Vert */
+  color: #344520; /* Vert foncé */
+}
+
+/* Feu */
+.feu {
+  background-color: #F08030; /* Orange */
+  color: #5B2C00; /* Orange foncé */
+}
+
+/* Eau */
+.eau {
+  background-color: #6890F0; /* Bleu */
+  color: #2F4C7F; /* Bleu foncé */
+}
+
+/* Insecte */
+.insecte {
+  background-color: #A8B820; /* Vert olive */
+  color: #6F7D1B; /* Vert olive foncé */
+}
+
+/* Spectre */
+.spectre {
+  background-color: #705898; /* Violet */
+  color: #3D325F; /* Violet foncé */
+}
+
+/* Normal */
+.normal {
+  background-color: #A8A878; /* Gris */
+  color: #665E5E; /* Gris foncé */
+}
+
+/* Électrique */
+.electrique {
+  background-color: #F8D030; /* Jaune */
+  color: #7E6411; /* Jaune foncé */
+}
+
+/* Poison */
+.poison {
+  background-color: #A040A0; /* Pourpre */
+  color: #5B1E58; /* Pourpre foncé */
+}
+
+/* Vol */
+.vol {
+  background-color: #A890F0; /* Bleu clair */
+  color: #3F4B8C; /* Bleu foncé */
+}
+
+/* Sol */
+.sol {
+  background-color: #E0C068; /* Jaune moutarde */
+  color: #8C6D1F; /* Jaune moutarde foncé */
+}
+
+/* Fée */
+.fee {
+  background-color: #EE99AC; /* Rose */
+  color: #8C4D5B; /* Rose foncé */
+}
+
+/* Combat */
+.combat {
+  background-color: #C03028; /* Rouge */
+  color: #7A1D1B; /* Rouge foncé */
+}
+
+/* Psy */
+.psy {
+  background-color: #F85888; /* Rose clair */
+  color: #9E456F; /* Rose foncé */
+}
+
+/* Roche */
+.roche {
+  background-color: #B8A038; /* Brun */
+  color: #796021; /* Brun foncé */
+}
+
+/* Acier */
+.acier {
+  background-color: #B8B8D0; /* Gris clair */
+  color: #6E6E8B; /* Gris foncé */
+}
+
+/* Glace */
+.glace {
+  background-color: #98D8D8; /* Cyan */
+  color: #518181; /* Cyan foncé */
+}
+
+/* Dragon */
+.dragon {
+  background-color: #7038F8; /* Violet foncé */
+  color: #4D2B84; /* Violet foncé */
 }
 
 body {
