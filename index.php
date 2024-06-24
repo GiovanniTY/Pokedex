@@ -5,8 +5,6 @@ if (!isset($_SESSION['user'])) {
     header("Location: ./login-register/login.php");
 }
 
-print_r($_SESSION["user"]);
-
 ?>
 
 <!DOCTYPE html>

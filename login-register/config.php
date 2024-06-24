@@ -1,15 +1,9 @@
 <?php 
-use Dotenv\Dotenv;
 
-require './vendor/autoload.php';
-
-$dotenv = Dotenv::createImmutable(__DIR__);
-$dotenv->load();
-
-$host = $_ENV['DB_HOST'];
-$db = $_ENV['DB_NAME'];
-$user = $_ENV['DB_USER'];
-$password = $_ENV['DB_PASS'];
+$host = 'localhost';
+$db = 'pokedex';
+$user = 'root';
+$password = 'root';
 
 $url = 'mysql:host=' . $host . ';dbname=' . $db . ';charset=utf8';
 
