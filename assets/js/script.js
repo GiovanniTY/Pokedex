@@ -1,3 +1,5 @@
+import {favorite} from './component/favorite.js';
+
 function toggleDarkMode() {
     const darkModeToggle = document.getElementById('dark-mode-toggle');
     const body = document.body;
@@ -22,3 +24,5 @@ function toggleDarkMode() {
 document.addEventListener('DOMContentLoaded', function() {
     toggleDarkMode();
 });
+
+favorite()
