@@ -53,6 +53,7 @@ if (isset($_POST['login'])) {
 
 <body>
     <a href="./register.php">Sign up</a>
+    <a href="../index.php">Return to homepage</a>
     <h1>Login</h1>
     <form action="<?php $_SERVER['PHP_SELF'] ?>" method="POST">
         <label for="email">Email</label>

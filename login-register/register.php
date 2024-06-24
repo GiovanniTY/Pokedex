@@ -1,5 +1,9 @@
 <?php
 include('./config.php');
+if (isset($_SESSION['user'])){
+    header("Location: ../index.php");
+}
+
 
 if (isset($_POST['register'])) {
 
@@ -85,6 +89,7 @@ if (isset($_POST['register'])) {
 
 <body>
     <a href="./login.php">Log in</a>
+    <a href="../index.php">Return to homepage</a>
     <h1>Register</h1>
     <form action="<?php $_SERVER['PHP_SELF'] ?>" method="POST">
         <label for="username">Username</label>
