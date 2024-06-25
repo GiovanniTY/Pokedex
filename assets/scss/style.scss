@@ -5,9 +5,19 @@
 @import '_card';
 @import '_type';
 
+@mixin responsive($width) {
+    @media only screen and (min-width: $width) {
+        @content;
+    }
+}
+
 body{
  background: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
- height: 100vh;
+ margin: 0;
+ width: 100%;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
 }
 body.dark{
    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -19,20 +29,22 @@ body.dark{
     cursor: pointer; 
     margin-bottom: 10px;
 }
-
+// *{
+//     border: 1px solid black;
+// }
 nav {
+    width: 100%;
     height: 60px; 
     display: flex;
     justify-content: flex-end; 
     align-items: center; 
-    padding: 0 20px; 
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
-    gap: 20px;
+
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
     a{
         color: black;
-        
+        padding: 0 10px;
     }
 }
 nav.dark{
@@ -45,16 +57,35 @@ nav.dark{
 form{
     display: flex;
     flex-direction: row;
-    width: 500px;
-    margin-left: 40px;
+    width: 80%;
     justify-content: center;
     align-items: center;
+    @include responsive(768px) {
+        width: 60%;
+    }
 }
 .search-container {
-    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     text-align: center;
-    margin-bottom: 80px ;
-   
+    width: 90%;
+    margin-bottom: 80px;
+    @include responsive(768px) {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+   select{
+    border: 1px solid #ccc;
+    padding: 8px;
+    border-radius: 5px;
+    width: 30%;
+    margin: 20px 0;
+    @include responsive(768px) {
+        width: 20%;
+    }
+   }
 }
 
 #search-bar {

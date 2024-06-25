@@ -51,6 +51,13 @@ session_start();
                     <img id="pikachu"src="assets/img/pikachu.png"alt="pikachu">
                 </button>
             </form>
+            <select name="tri" id="tri">
+                <option value="default">Tout afficher</option>
+                <option value="favoris">Favoris</option>
+                <option value="numero">Numéro</option>
+                <option value="nom">Nom</option>
+                <option value="type">Type</option>
+            </select>
         </div>
         
         <div class="pokedex-container">
@@ -66,7 +73,7 @@ session_start();
                         echo '#000' . $pokemon['pokedexId'];
                     } else if ($pokemon['pokedexId'] < 100) {
                         echo '#00' . $pokemon['pokedexId'];
-                    } else if($pokemon['pokedexId']<200){
+                    } else if($pokemon['pokedexId']<1000){
                         echo '#0'. $pokemon['pokedexId'];
                     }?></p>
                     <h2><?php echo $pokemon['name']; ?></h2>
@@ -81,7 +88,7 @@ session_start();
             <?php endforeach; ?>
         </div>
     </main>
-    <script type="module"src="assets/js/script.js"></script>
+    <script type="module" src="./assets/js/script.js"></script>
 </body>
 
 </html>

@@ -1,4 +1,5 @@
 import {favorite} from './component/favorite.js';
+import { filter } from "./component/filter.js";
 
 function toggleDarkMode() {
     const darkModeToggle = document.getElementById('dark-mode-toggle');
@@ -53,3 +54,4 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 favorite()
+filter()
