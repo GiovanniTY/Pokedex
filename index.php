@@ -31,7 +31,7 @@ session_start();
         if (isset($_SESSION["user"])) {
         ?>
             <a href="../login-register/logout.php">Logout</a>
-            <a href="../login-register/profile.php">Profile</a>
+            <a href="../login-register/profile.php"><img class="avatar-img"src="<?php echo $_SESSION['user']['avatar']?>" alt="avatar"></a>
         <?php   }
         if (!isset($_SESSION["user"])) {
 

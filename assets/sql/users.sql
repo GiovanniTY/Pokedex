@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le : lun. 24 juin 2024 à 12:57
+-- Généré le : mar. 25 juin 2024 à 11:54
 -- Version du serveur : 11.3.2-MariaDB
 -- Version de PHP : 8.3.6
 
@@ -32,15 +32,19 @@ CREATE TABLE `users` (
   `id` int(250) NOT NULL,
   `username` varchar(240) NOT NULL,
   `email` varchar(240) NOT NULL,
-  `password` varchar(250) NOT NULL
+  `password` varchar(250) NOT NULL,
+  `avatar` varchar(250) DEFAULT './storage/default_avatars/pikachu.png',
+  `description` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Déchargement des données de la table `users`
 --
 
-INSERT INTO `users` (`id`, `username`, `email`, `password`) VALUES
-(4, 'Justine', 'justine0912@gmail.com', '$2y$10$eZux6O2TC.G9Kj.g1mf1Oepa0appe47cXZk/bhKZuHdHaYH0xFI2a');
+INSERT INTO `users` (`id`, `username`, `email`, `password`, `avatar`, `description`) VALUES
+(4, 'Justine', 'justine0912@gmail.com', '$2y$10$nawk9RN54NfFpBIy6f/jWe7YFjVCmC/EzJ./aDfRnv3kmxrcbnk2m', './storage/default_avatars/bulbizarre.png', 'lorem ipsum blablablalorem ipsum blablablalorem ipsum blablablalorem ipsum blablabla'),
+(5, 'Giovanni', 'giovanni@gmail.com', '$2y$10$SOJuwgxMdUwBC3AhXi9G4.6XnH5wPXlLF687az3SQQhrX9trbj3mC', './storage/default_avatars/pikachu.png', NULL),
+(6, 'momoa', 'momoa@gmail.com', '$2y$10$776Y6rRpBNJtyr/qRAg93OgPWmUcqGidgJ7lwTVSorrywL40m8RtW', './storage/default_avatars/pikachu.png', NULL);
 
 --
 -- Index pour les tables déchargées
@@ -60,7 +64,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT pour la table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(250) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(250) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

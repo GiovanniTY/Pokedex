@@ -7,6 +7,10 @@
 //     exit;
 // }
 include('./login-register/config.php');
+<<<<<<< HEAD
+=======
+
+>>>>>>> refs/remotes/origin/dev
 
 if (isset($_GET['search'])) {
     $searchTerm = htmlspecialchars($_GET['search']);
