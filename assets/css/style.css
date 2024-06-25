@@ -1,28 +1,4 @@
 @charset "UTF-8";
-#logo {
-  width: 60%;
-  height: auto;
-  margin-top: 80px;
-}
-
-#pokeball {
-  height: 100px;
-  width: 100px;
-}
-
-#pokemon {
-  width: 90px;
-  height: 60px;
-  left: 0px;
-  transition: transform 1s ease;
-  align-self: flex-start;
-}
-
-#pikachu {
-  width: 80px;
-  height: 80px;
-}
-
 main {
   display: flex;
   justify-content: center;
@@ -341,6 +317,30 @@ section .pokemon p {
   left: 49%;
   z-index: -1;
   color: #333;
+}
+
+#logo {
+  width: 60%;
+  height: auto;
+  margin-top: 80px;
+}
+
+#pokeball {
+  height: 100px;
+  width: 100px;
+}
+
+#pokemon {
+  width: 90px;
+  height: 60px;
+  left: 0px;
+  transition: transform 1s ease;
+  align-self: flex-start;
+}
+
+#pikachu {
+  width: 80px;
+  height: 80px;
 }
 
 body {

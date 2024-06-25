@@ -20,7 +20,7 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
             <head>
                 <meta charset="UTF-8">
                 <title>Détails de <?php echo htmlspecialchars($pokemon['name']); ?></title>
-                <link rel="stylesheet" href="assets/css/style.css">
+                <link rel="stylesheet" href="./assets/css/style.css">
             </head>
             <body>
             <nav>

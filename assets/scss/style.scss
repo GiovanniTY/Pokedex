@@ -1,9 +1,10 @@
-@import '_img';
 @import '_main';
 @import '_card';
 @import '_type';
 @import '_profile';
 @import '_details';
+@import '_img';
+
 
 @mixin responsive($width) {
     @media only screen and (min-width: $width) {
