@@ -7,6 +7,30 @@ main {
   width: 100%;
 }
 
+#logo {
+  width: 60%;
+  height: auto;
+  margin-top: 80px;
+}
+
+#pokeball {
+  height: 100px;
+  width: 100px;
+}
+
+#pokemon {
+  width: 90px;
+  height: 60px;
+  left: 0px;
+  transition: transform 1s ease;
+  align-self: flex-start;
+}
+
+#pikachu {
+  width: 80px;
+  height: 80px;
+}
+
 .pokedex-container {
   display: flex;
   flex-direction: row;
