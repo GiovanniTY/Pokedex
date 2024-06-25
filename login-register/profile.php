@@ -70,7 +70,7 @@ if (isset($_POST['submit'])) {
 
 <body>
     <h1>Profile</h1>
-    <img src="<?php echo '.' . $_SESSION['user']['avatar'] ?>" class="avatar-img" alt="avatar">
+    <img src="<?php echo '.' . $_SESSION['user']['avatar'] ?>" class="avatar-img" alt="avatar" id="profile-img">
     <form action="<?php $_SERVER['PHP_SELF'] ?>" method="POST">
         <label for="avatar">Avatar</label>
         <select name="avatar" id="avatar">
@@ -85,7 +85,7 @@ if (isset($_POST['submit'])) {
         <input type="text" name="username" value="<?php echo $_SESSION['user']['username'] ?>"><br>
         <?php if (isset($errors['username_missing'])) { ?><span class="error" id="username_error"><?php echo $errors['username_missing'] ?? ''; ?></span><br><?php } ?>
         <label for="description">Description</label>
-        <textarea name="description" id="description" rows="5" value="<?php echo $_SESSION['user']['description'] ?>"></textarea><br>
+        <textarea name="description" id="description" rows="5"><?php echo $_SESSION['user']['description'] ?></textarea><br>
         <label for="email">Email</label>
         <input type="email" name="email" value="<?php echo $_SESSION['user']['email'] ?>"><br>
         <?php if (isset($errors['email_missing'])) { ?><span class="error" id="email_error"><?php echo $errors['email_missing'] ?? ''; ?></span><br><?php } ?>
@@ -95,6 +95,14 @@ if (isset($_POST['submit'])) {
         <?php if (isset($errors['password_identical'])) { ?><span class="error" id="password_identical"><?php echo $errors['password_identical'] ?? ''; ?></span><br><?php } ?>
         <button type="submit" name="submit">Update</button>
     </form>
+
+    <script> 
+        const img = document.getElementById("profile-img");
+        const select = document.getElementById('avatar');
+        select.addEventListener('change', function() {
+        img.src = '.' + select.value;
+    });
+    </script>
 </body>
 
 </html>
