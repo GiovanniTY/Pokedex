@@ -47,6 +47,6 @@ function startRotation() {
     rotateInterval = setInterval(rotateImage, 5000); 
 }
 
-
-};
 startRotation();
+};
+

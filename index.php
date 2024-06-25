@@ -46,7 +46,9 @@ session_start();
             <form method="GET" action="">
                 <input type="text" name="search" id="search-bar" 
                 placeholder="Rechercher des Pokémon par leur nom...">
-                <button type="submit">submit</button>
+                <button id="search"  type="submit">
+                    <img id="pikachu"src="assets/img/pikachu.png"alt="pikachu">
+                </button>
             </form>
         </div>
         
