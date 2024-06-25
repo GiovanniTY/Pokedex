@@ -1,3 +1,5 @@
+import {favorite} from './component/favorite.js';
+
 function toggleDarkMode() {
     const darkModeToggle = document.getElementById('dark-mode-toggle');
     const body = document.body;
@@ -50,3 +52,4 @@ document.addEventListener('DOMContentLoaded', function() {
     startRotation(); 
 });
 
+favorite()

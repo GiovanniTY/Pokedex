@@ -46,6 +46,7 @@ main {
   margin: 50px 20px;
   width: 300px;
   transition: transform 0.3s ease;
+  position: relative;
 }
 .pokedex-container .pokemon-card img {
   width: 50%;
@@ -75,6 +76,16 @@ main {
 
 #dark-mode-toggle {
   margin-bottom: 150px;
+}
+
+.material-symbols-outlined {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
+.favorite .material-symbols-outlined {
+  color: #B8860B;
 }
 
 /* Plante */
@@ -114,7 +125,7 @@ main {
 }
 
 /* Électrique */
-.electrique {
+.Électrik {
   background-color: #F8D030; /* Jaune */
   color: #7E6411; /* Jaune foncé */
 }
@@ -138,7 +149,17 @@ main {
 }
 
 /* Fée */
-.fee {
+.fée {
+  background-color: #EE99AC; /* Rose */
+  color: #8C4D5B; /* Rose foncé */
+}
+
+.clefairy {
+  background-color: #EE99AC; /* Rose */
+  color: #8C4D5B; /* Rose foncé */
+}
+
+.clefable {
   background-color: #EE99AC; /* Rose */
   color: #8C4D5B; /* Rose foncé */
 }
@@ -192,6 +213,7 @@ body.dark {
   border: none;
   background: none;
   cursor: pointer;
+<<<<<<< HEAD
   margin-bottom: 10px;
 }
 
@@ -243,3 +265,6 @@ form {
   cursor: pointer;
   margin-bottom: 10px;
 }/*# sourceMappingURL=style.css.map */
+=======
+}
+>>>>>>> origin/dylan

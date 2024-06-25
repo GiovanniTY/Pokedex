@@ -15,6 +15,7 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pokédex</title>
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 
 <body>
@@ -59,6 +60,7 @@ session_start();
 
             foreach ($pokemonList as $pokemon) : ?>
                 <div class="pokemon-card">
+                    <span class="material-symbols-outlined">favorite</span>
                     <img src="<?php echo $pokemon['image']; ?>" alt="<?php echo $pokemon['name']; ?>">
                     <p class="pokedex-id"><?php if ($pokemon['pokedexId'] < 10) {
                         echo '#000' . $pokemon['pokedexId'];
@@ -79,7 +81,7 @@ session_start();
             <?php endforeach; ?>
         </div>
     </main>
-    <script src="assets/js/script.js"></script>
+    <script type="module"src="assets/js/script.js"></script>
 </body>
 
 </html>
