@@ -319,30 +319,6 @@ section .pokemon p {
   color: #333;
 }
 
-#logo {
-  width: 60%;
-  height: auto;
-  margin-top: 80px;
-}
-
-#pokeball {
-  height: 100px;
-  width: 100px;
-}
-
-#pokemon {
-  width: 90px;
-  height: 60px;
-  left: 0px;
-  transition: transform 1s ease;
-  align-self: flex-start;
-}
-
-#pikachu {
-  width: 80px;
-  height: 80px;
-}
-
 body {
   background: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
   margin: 0;

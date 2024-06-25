@@ -80,8 +80,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 favorite()
-<<<<<<< HEAD
-
+filter()
 document.addEventListener('DOMContentLoaded', function() {
     const searchBar = document.getElementById('search-bar');
     const pokedexContainer = document.getElementById('pokedex-container');
@@ -107,6 +106,3 @@ document.addEventListener('DOMContentLoaded', function() {
             .catch(error => console.error('Erreur pendant le fetch:', error));
     });
 });
-=======
-filter()
->>>>>>> origin/dylan
