@@ -56,13 +56,14 @@ session_start();
             include('search.php');
 
             foreach ($pokemonList as $pokemon) : ?>
+             <a href="details.php?id=<?php echo $pokemon['id']; ?>">
                 <div class="pokemon-card">
                     <img src="<?php echo $pokemon['image']; ?>" alt="<?php echo $pokemon['name']; ?>">
                     <p class="pokedex-id"><?php if ($pokemon['pokedexId'] < 10) {
                         echo '#000' . $pokemon['pokedexId'];
                     } else if ($pokemon['pokedexId'] < 100) {
                         echo '#00' . $pokemon['pokedexId'];
-                    } else if($pokemon['pokedexId']<200){
+                    } else if($pokemon['pokedexId']<250){
                         echo '#0'. $pokemon['pokedexId'];
                     }?></p>
                     <h2><?php echo $pokemon['name']; ?></h2>
@@ -74,6 +75,7 @@ session_start();
                     </div>
 
                 </div>
+                </a>
             <?php endforeach; ?>
         </div>
     </main>
