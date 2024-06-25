@@ -1,9 +1,10 @@
-@import 'login.scss';
-@import 'register.scss';
+@import '_login';
+@import '_register';
 @import '_img';
 @import '_main';
 @import '_card';
 @import '_type';
+@import '_profile';
 
 body{
  background: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
