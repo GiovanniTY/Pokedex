@@ -47,32 +47,6 @@ function startRotation() {
     rotateInterval = setInterval(rotateImage, 5000); 
 }
 
-startRotation();
+
 };
-
-document.addEventListener('DOMContentLoaded', function() {
-    toggleDarkMode();
-
-    const searchBar = document.getElementById('search-bar');
-    const pokedexContainer = document.getElementById('pokedex-container');
-
-    searchBar.addEventListener('input', function() {
-        const query = searchBar.value;
-        fetch(`search.php?search=${query}`)
-            .then(response => response.json())
-            .then(data => {
-                pokedexContainer.innerTextHTML = '';
-                data.forEach(pokemon => {
-                    const pokemonCard = document.createElement('div');
-                    pokemonCard.classList.add('pokemon-card');
-                    pokemonCard.innerHTML = `
-                        <img src="${pokemon.image}" alt="${pokemon.name}">
-                        <h2>${pokemon.name}</h2>
-                        <p>ID: ${pokemon.pokedexId}</p>
-                        <p>Tipo: ${pokemon.type1}${pokemon.type2 ? ', ' + pokemon.type2 : ''}</p>
-                    `;
-                    pokedexContainer.appendChild(pokemonCard);
-                });
-            });
-    });
-});
+startRotation();
