@@ -76,11 +76,7 @@ session_start();
                         echo '#000' . $pokemon['pokedexId'];
                     } else if ($pokemon['pokedexId'] < 100) {
                         echo '#00' . $pokemon['pokedexId'];
-<<<<<<< HEAD
-                    } else if($pokemon['pokedexId']<250){
-=======
                     } else if($pokemon['pokedexId']<1000){
->>>>>>> origin/dylan
                         echo '#0'. $pokemon['pokedexId'];
                     }?></p>
                     <h2><?php echo $pokemon['name']; ?></h2>
