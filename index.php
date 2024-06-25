@@ -30,13 +30,15 @@ session_start();
         }
         if (isset($_SESSION["user"])) {
         ?>
-            <a href="./login-register/logout.php">Logout</a>
+            <a href="../login-register/logout.php">Logout</a>
+            <a href="../login-register/profile.php">Profile</a>
         <?php   }
         if (!isset($_SESSION["user"])) {
 
         ?>
             <a href="./login-register/register.php">Register</a>
         <?php } ?>
+
     </nav>
     <main>
         <img id="logo" src="assets/img/logo.png" alt="logo">
