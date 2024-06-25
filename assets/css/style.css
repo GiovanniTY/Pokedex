@@ -264,6 +264,76 @@ nav .avatar-img {
   background-color: rgba(0, 0, 0, 0.733);
 }
 
+section {
+  width: 100%;
+  margin: 2%;
+  padding: 1%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+section .details-container {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 20px;
+  width: 80%;
+  padding: 2%;
+}
+section .details-container span {
+  border: 1px solid #333;
+  border-radius: 5px;
+  padding: 8px;
+  margin-right: 2%;
+  font-weight: bold;
+}
+section .details-container span img {
+  width: 3%;
+}
+section .details-container p {
+  margin-bottom: auto;
+}
+section .stat-bar-container {
+  width: 100%;
+  background-color: #e0e0df;
+  border-radius: 25px;
+  overflow: hidden;
+}
+section .stat-bar {
+  height: 20px;
+  border-radius: 25px;
+  text-align: right;
+  padding-right: 5px;
+  color: white;
+  line-height: 20px; /* Align the text vertically */
+}
+section .hp {
+  background-color: #ff5959;
+}
+section .attack {
+  background-color: #f5ac78;
+}
+section .defense {
+  background-color: #fae078;
+}
+section .special-attack {
+  background-color: #ab82ff;
+}
+section .special-defense {
+  background-color: #78c850;
+}
+section .speed {
+  background-color: #6890f0;
+}
+section .pokemon p {
+  position: absolute;
+  font-size: 15rem;
+  top: -15%;
+  left: 49%;
+  z-index: -1;
+  color: #333;
+}
+
 body {
   background: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
   height: 100vh;
