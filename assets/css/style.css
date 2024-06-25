@@ -203,7 +203,12 @@ main {
   color: #4D2B84; /* Violet foncé */
 }
 
-<<<<<<< HEAD
+/* Ténebre */
+.ténèbres {
+  background-color: #4B0082; /* Indigo */
+  color: #ebb5f4; /* Dark Purple */
+}
+
 nav .avatar-img {
   height: 50px;
   width: 50px;
@@ -266,12 +271,6 @@ nav .avatar-img {
   border-radius: 100%;
   padding: 3px;
   background-color: rgba(0, 0, 0, 0.733);
-=======
-/* Ténebre */
-.ténèbres {
-  background-color: #4B0082; /* Indigo */
-  color: #ebb5f4; /* Dark Purple */
->>>>>>> origin/dylan
 }
 
 section {
@@ -438,12 +437,8 @@ form {
   background: none;
   cursor: pointer;
   margin-bottom: 10px;
-<<<<<<< HEAD
 }
 
 .error {
   color: rgb(235, 58, 58);
 }/*# sourceMappingURL=style.css.map */
-=======
-}
->>>>>>> origin/dylan
