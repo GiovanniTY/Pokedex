@@ -7,5 +7,3 @@ try {
     echo "Erreur de connexion à la base de données: " . $e->getMessage();
     exit;
 }
-?>
-
