@@ -15,15 +15,17 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pokédex</title>
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 
 <body>
     <nav>
+        <img id="pokemon" src="assets/img/pokemon.png" alt="pokemon">
         <?php
         if (!isset($_SESSION["user"])) {
         ?>
 
-            <a href="../login-register/login.php">Login</a>
+            <a href="./login-register/login.php">Login</a>
         <?php
         }
         if (isset($_SESSION["user"])) {
@@ -34,7 +36,7 @@ session_start();
         if (!isset($_SESSION["user"])) {
 
         ?>
-            <a href="../login-register/register.php">Register</a>
+            <a href="./login-register/register.php">Register</a>
         <?php } ?>
 
     </nav>
@@ -43,12 +45,24 @@ session_start();
         <button id="dark-mode-toggle">
             <img id="pokeball" src="assets/img/pokeball2.png" alt="pokeball">
         </button>
+        <div class="search-container">
+            <form method="GET" action="">
+                <input type="text" name="search" id="search-bar" 
+                placeholder="Rechercher des Pokémon par leur nom...">
+                <button id="search"  type="submit">
+                    <img id="pikachu"src="assets/img/pikachu.png"alt="pikachu">
+                </button>
+            </form>
+        </div>
+        
         <div class="pokedex-container">
             <?php
             include('function.php');
+            include('search.php');
 
             foreach ($pokemonList as $pokemon) : ?>
                 <div class="pokemon-card">
+                    <span class="material-symbols-outlined">favorite</span>
                     <img src="<?php echo $pokemon['image']; ?>" alt="<?php echo $pokemon['name']; ?>">
                     <p class="pokedex-id"><?php if ($pokemon['pokedexId'] < 10) {
                         echo '#000' . $pokemon['pokedexId'];
@@ -69,7 +83,7 @@ session_start();
             <?php endforeach; ?>
         </div>
     </main>
-    <script src="assets/js/script.js"></script>
+    <script type="module"src="assets/js/script.js"></script>
 </body>
 
 </html>
