@@ -1,4 +1,5 @@
 import {favorite} from './component/favorite.js';
+import { filter } from "./component/filter.js";
 
 function toggleDarkMode() {
     const darkModeToggle = document.getElementById('dark-mode-toggle');
@@ -79,6 +80,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 favorite()
+<<<<<<< HEAD
 
 document.addEventListener('DOMContentLoaded', function() {
     const searchBar = document.getElementById('search-bar');
@@ -105,3 +107,6 @@ document.addEventListener('DOMContentLoaded', function() {
             .catch(error => console.error('Erreur pendant le fetch:', error));
     });
 });
+=======
+filter()
+>>>>>>> origin/dylan
