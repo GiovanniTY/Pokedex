@@ -7,10 +7,7 @@
 //     exit;
 // }
 include('./login-register/config.php');
-<<<<<<< HEAD
-=======
 
->>>>>>> giovanni
 
 if (isset($_GET['search'])) {
     $searchTerm = htmlspecialchars($_GET['search']);
