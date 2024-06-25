@@ -71,4 +71,17 @@ section {
         background-color: #6890f0;
     }
 
+    .pokemon{
+
+
+        p{
+            position: absolute;
+            font-size: 15rem;
+            top: -15%;
+            left: 49%;
+            z-index: -1;
+            color: #333;
+        }
+    }
+
 }

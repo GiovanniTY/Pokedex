@@ -101,16 +101,20 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
                         <div class="stat-bar speed" style="width: <?php echo htmlspecialchars($pokemon['speed']); ?>%;">
                         </div>
                     </div>
-
-
-                <p>ID: <?php echo htmlspecialchars($pokemon['pokedexId']); ?></p>
-
                 </div>
                 </div>
 
-
+                <div class="pokemon">
+                <p class="pokedex-id"><?php if ($pokemon['pokedexId'] < 10) {
+                        echo '#000' . $pokemon['pokedexId'];
+                    } else if ($pokemon['pokedexId'] < 100) {
+                        echo '#00' . $pokemon['pokedexId'];
+                    } else if($pokemon['pokedexId']<250){
+                        echo '#0'. $pokemon['pokedexId'];
+                    }?></p>
                 <img src="<?php echo $pokemon['image']; ?>" alt="<?php echo $pokemon['name']; ?>">
                 <a href="index.php">Retour à la liste</a>
+                </div>
 
                 </section>
                 </main>
