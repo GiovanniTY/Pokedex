@@ -42,9 +42,18 @@ session_start();
         <button id="dark-mode-toggle">
             <img id="pokeball" src="assets/img/pokeball2.png" alt="pokeball">
         </button>
+        <div class="search-container">
+            <form method="GET" action="">
+                <input type="text" name="search" id="search-bar" 
+                placeholder="Rechercher des Pokémon par leur nom...">
+                <button type="submit">submit</button>
+            </form>
+        </div>
+        
         <div class="pokedex-container">
             <?php
             include('function.php');
+            include('search.php');
 
             foreach ($pokemonList as $pokemon) : ?>
                 <div class="pokemon-card">

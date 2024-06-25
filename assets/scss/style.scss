@@ -16,8 +16,8 @@ body.dark{
 #dark-mode-toggle {
     border: none;
     background: none;
-    padding: 0; 
     cursor: pointer; 
+    margin-bottom: 10px;
 }
 
 nav {
@@ -32,10 +32,47 @@ nav {
     font-weight: bold;
     a{
         color: black;
+        
     }
 }
 nav.dark{
     a{
         color: white;
+        
     }
+}
+
+form{
+    display: flex;
+    flex-direction: row;
+    width: 500px;
+}
+.search-container {
+    display: flex;
+    text-align: center;
+    margin-bottom: 80px ;
+    flex-direction: row;
+}
+
+#search-bar {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+button[type="submit"] {
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
 }
