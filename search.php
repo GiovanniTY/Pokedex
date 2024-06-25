@@ -1,7 +1,7 @@
 <?php
-include('./login-register/config.php'); // Include il file di connessione al database
+include('./login-register/config.php'); 
 
-$per_page = 20; // Numero di risultati per pagina
+$per_page = 20; 
 $page = isset($_GET['page']) ? (int)$_GET['page'] : 1; // Pagina corrente
 $offset = ($page - 1) * $per_page; // Calcolo dell'offset per la query
 
