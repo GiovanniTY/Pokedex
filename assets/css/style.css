@@ -1,7 +1,7 @@
 @charset "UTF-8";
 #logo {
-  width: 500px;
-  height: 150px;
+  width: 60%;
+  height: auto;
   margin-top: 80px;
 }
 
@@ -15,6 +15,7 @@
   height: 60px;
   left: 0px;
   transition: transform 1s ease;
+  align-self: flex-start;
 }
 
 #pikachu {
@@ -27,6 +28,7 @@ main {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  width: 100%;
 }
 
 .pokedex-container {
@@ -86,6 +88,7 @@ main {
 
 .favorite .material-symbols-outlined {
   color: #B8860B;
+  font-weight: bold;
 }
 
 /* Plante */
@@ -200,6 +203,7 @@ main {
   color: #4D2B84; /* Violet foncé */
 }
 
+<<<<<<< HEAD
 nav .avatar-img {
   height: 50px;
   width: 50px;
@@ -262,6 +266,12 @@ nav .avatar-img {
   border-radius: 100%;
   padding: 3px;
   background-color: rgba(0, 0, 0, 0.733);
+=======
+/* Ténebre */
+.ténèbres {
+  background-color: #4B0082; /* Indigo */
+  color: #ebb5f4; /* Dark Purple */
+>>>>>>> origin/dylan
 }
 
 section {
@@ -336,7 +346,11 @@ section .pokemon p {
 
 body {
   background: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
-  height: 100vh;
+  margin: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 body.dark {
@@ -351,18 +365,18 @@ body.dark {
 }
 
 nav {
+  width: 100%;
   height: 60px;
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  padding: 0 20px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  gap: 20px;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
 }
 nav a {
   color: black;
+  padding: 0 10px;
 }
 
 nav.dark a {
@@ -372,15 +386,42 @@ nav.dark a {
 form {
   display: flex;
   flex-direction: row;
-  width: 500px;
-  margin-left: 40px;
+  width: 80%;
   justify-content: center;
   align-items: center;
 }
+@media only screen and (min-width: 768px) {
+  form {
+    width: 60%;
+  }
+}
 
 .search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   text-align: center;
+  width: 90%;
   margin-bottom: 80px;
+}
+@media only screen and (min-width: 768px) {
+  .search-container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+.search-container select {
+  border: 1px solid #ccc;
+  padding: 8px;
+  border-radius: 5px;
+  width: 30%;
+  margin: 20px 0;
+}
+@media only screen and (min-width: 768px) {
+  .search-container select {
+    width: 20%;
+  }
 }
 
 #search-bar {
@@ -397,8 +438,12 @@ form {
   background: none;
   cursor: pointer;
   margin-bottom: 10px;
+<<<<<<< HEAD
 }
 
 .error {
   color: rgb(235, 58, 58);
 }/*# sourceMappingURL=style.css.map */
+=======
+}
+>>>>>>> origin/dylan
