@@ -3,6 +3,7 @@
 @import '_card';
 @import '_type';
 @import '_profile';
+@import '_details';
 
 @mixin responsive($width) {
     @media only screen and (min-width: $width) {
