@@ -68,6 +68,7 @@ session_start();
             include('search.php');
 
             foreach ($pokemonList as $pokemon) : ?>
+             <a href="details.php?id=<?php echo $pokemon['id']; ?>">
                 <div class="pokemon-card">
                     <span class="material-symbols-outlined">favorite</span>
                     <img src="<?php echo $pokemon['image']; ?>" alt="<?php echo $pokemon['name']; ?>">
@@ -87,6 +88,7 @@ session_start();
                     </div>
 
                 </div>
+                </a>
             <?php endforeach; ?>
         </div>
     </main>
