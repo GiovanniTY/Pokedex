@@ -25,28 +25,28 @@ document.addEventListener('DOMContentLoaded', function() {
     toggleDarkMode();
 });
 
-const pokemonImage = document.getElementById('pokemon');
-let rotation = 0;
-let rotateInterval;
+document.addEventListener('DOMContentLoaded', function() {
+    const pokemonImage = document.getElementById('pokemon');
+    let rotation = 0;
+    let rotateInterval;
 
-function rotateImage() {
-    rotation += 90;
-    pokemonImage.style.transform = `rotate(${rotation}deg)`;
+    function rotateImage() {
+        rotation += 90;
+        pokemonImage.style.transform = `rotate(${rotation}deg)`;
 
-    
-    if (rotation >= 90) {
-        clearInterval(rotateInterval);
-        rotation = 0; 
-        setTimeout(() => {
-            pokemonImage.style.transform = 'rotate(0deg)';
-            startRotation(); 
-        }, 5000); 
-}
+        if (rotation >= 90) { 
+            clearInterval(rotateInterval);
+            setTimeout(() => {
+                pokemonImage.style.transform = 'rotate(0deg)'; 
+                startRotation(); 
+            }, 5000); 
+        }
+    }
 
-function startRotation() {
-    rotateInterval = setInterval(rotateImage, 5000); 
-}
+    function startRotation() {
+        rotateInterval = setInterval(rotateImage, 5000); 
+    }
 
-startRotation();
-};
+    startRotation(); 
+});
 
