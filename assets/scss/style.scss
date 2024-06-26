@@ -4,11 +4,16 @@
 @import '_type';
 @import '_profile';
 @import '_details';
+@import '_compare';
 
 @mixin responsive($width) {
     @media only screen and (min-width: $width) {
         @content;
     }
+}
+
+*{
+    text-decoration: none;
 }
 
 body{

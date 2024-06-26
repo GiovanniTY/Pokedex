@@ -91,6 +91,10 @@ main {
   font-weight: bold;
 }
 
+a {
+  color: #333;
+}
+
 /* Plante */
 .plante {
   background-color: #78C850; /* Vert */
@@ -343,6 +347,91 @@ section .pokemon p {
   color: #333;
 }
 
+.detail__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.detail__header button {
+  height: -moz-fit-content;
+  height: fit-content;
+  border-radius: 5px;
+  border: none;
+  background-color: #333;
+  color: white;
+  padding: 10px;
+  margin: 10px 0;
+  cursor: pointer;
+}
+
+#zone__fight {
+  width: 70%;
+  height: 300px;
+  border: 1px solid black;
+  border-radius: 10px;
+  background-color: #f8f8f8;
+  margin-bottom: 20px;
+  position: relative;
+  overflow: hidden;
+  padding: 10px;
+}
+
+.fight-img {
+  width: 30%;
+  position: absolute;
+}
+
+.first__img {
+  top: 125px;
+  left: -30%;
+  transform: scaleX(-1);
+  animation: fromLeft 1.5s ease-in-out forwards;
+}
+
+.second__img {
+  right: 0;
+  transform: translateX(100%);
+  animation: fromRight 1.5s ease-in-out forwards;
+}
+
+.plateforme {
+  position: absolute;
+  background-color: #e2dbe3;
+  width: 30%;
+  height: 50px;
+  border-radius: 999px;
+  border: 5px solid gray;
+}
+
+.plateforme--left {
+  top: 220px;
+}
+
+.plateforme--right {
+  right: 5%;
+  top: 100px;
+}
+
+@keyframes fromLeft {
+  from {
+    left: -30%;
+  }
+  to {
+    left: 0;
+  }
+}
+@keyframes fromRight {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+* {
+  text-decoration: none;
+}
+
 body {
   background: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
   margin: 0;
@@ -441,4 +530,4 @@ form {
 
 .error {
   color: rgb(235, 58, 58);
-}/*# sourceMappingURL=style.css.map */
+}
