@@ -1,65 +1,72 @@
 /* Plante */
 .plante {
-    background-color: #78C850; /* Vert */
-    color: #344520; /* Vert foncé */
+    background-color: #9acc50; 
+    color: #edf7ff;
 }
 
 /* Feu */
 .feu {
-    background-color: #F08030; /* Orange */
-    color: #5B2C00; /* Orange foncé */
+    background-color: #fc7e23;
+    color: #edf7ff; 
 }
 
 /* Eau */
 .eau {
-    background-color: #6890F0; /* Bleu */
-    color: #2F4C7F; /* Bleu foncé */
+    background-color: #4591c4; /* Bleu */
+    color: #edf7ff; /* Bleu foncé */
 }
 
 /* Insecte */
 .insecte {
-    background-color: #A8B820; /* Vert olive */
-    color: #6F7D1B; /* Vert olive foncé */
+    background-color: #729e3f; /* Vert olive */
+    color: #edf7ff; /* Vert olive foncé */
 }
 
 /* Spectre */
 .spectre {
-    background-color: #705898; /* Violet */
-    color: #3D325F; /* Violet foncé */
+    background-color: #7b62a3; /* Violet */
+    color: #edf7ff; /* Violet foncé */
 }
 
 /* Normal */
 .normal {
-    background-color: #A8A878; /* Gris */
-    color: #665E5E; /* Gris foncé */
+    background-color: #a5adb0; /* Gris */
+    color: #edf7ff; /* Gris foncé */
 }
 
 /* Électrique */
+<<<<<<< HEAD
 .Électrik {
     background-color: #F8D030; /* Jaune */
     color: #7E6411; /* Jaune foncé */
+=======
+.Électrik{
+    background-color: #edd434; /* Jaune */
+    color: #edf7ff; /* Jaune foncé */
+>>>>>>> origin/Tom
 }
 
 /* Poison */
 .poison {
-    background-color: #A040A0; /* Pourpre */
-    color: #5B1E58; /* Pourpre foncé */
+    background-color: #b97fc9; /* Pourpre */
+    color: #edf7ff;
 }
 
 /* Vol */
 .vol {
-    background-color: #A890F0; /* Bleu clair */
-    color: #3F4B8C; /* Bleu foncé */
+    background: linear-gradient(to bottom, #3ec9f0, white);
+    color: #edf7ff; /* Bleu foncé */
 }
 
 /* Sol */
 .sol {
-    background-color: #E0C068; /* Jaune moutarde */
-    color: #8C6D1F; /* Jaune moutarde foncé */
+    background: linear-gradient(to bottom, #f7df40, #ab9843);
+    color: #edf7ff; /* Jaune moutarde foncé */
 }
 
 /* Fée */
 .fée {
+<<<<<<< HEAD
     background-color: #EE99AC; /* Rose */
     color: #8C4D5B; /* Rose foncé */
 }
@@ -70,24 +77,28 @@
 .clefable {
     background-color: #EE99AC; /* Rose */
     color: #8C4D5B; /* Rose foncé */
+=======
+    background-color: #fcb8e8; /* Rose */
+    color: #edf7ff; /* Rose foncé */
+>>>>>>> origin/Tom
 }
 
 /* Combat */
 .combat {
-    background-color: #C03028; /* Rouge */
-    color: #7A1D1B; /* Rouge foncé */
+    background-color: #d66722; /* Rouge */
+    color: #edf7ff; /* Rouge foncé */
 }
 
 /* Psy */
 .psy {
-    background-color: #F85888; /* Rose clair */
-    color: #9E456F; /* Rose foncé */
+    background-color: #f266b8;
+    color: #edf7ff; /* Rose foncé */
 }
 
 /* Roche */
 .roche {
-    background-color: #B8A038; /* Brun */
-    color: #796021; /* Brun foncé */
+    background-color: #a38b21; /* Brun */
+    color: #edf7ff; /* Brun foncé */
 }
 
 /* Acier */
@@ -98,14 +109,14 @@
 
 /* Glace */
 .glace {
-    background-color: #98D8D8; /* Cyan */
-    color: #518181; /* Cyan foncé */
+    background-color: #51c5e8; /* Cyan */
+    color: #edf7ff; /* Cyan foncé */
 }
 
 /* Dragon */
 .dragon {
-    background-color: #7038F8; /* Violet foncé */
-    color: #4D2B84; /* Violet foncé */
+    background: linear-gradient(to bottom, #53a3cf, #f26e57);
+    color: #edf7ff; /* Violet foncé */
 }
 
 /* Ténebre */
