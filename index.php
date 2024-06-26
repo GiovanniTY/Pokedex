@@ -20,12 +20,9 @@ session_start();
 
 <body>
     <nav>
-<<<<<<< HEAD
         <a href="index.php">Home</a>
-=======
         <img id="pokemon" src="assets/img/pokemon.png" alt="pokemon">
         <a href="compare.php">Comparateur</a>
->>>>>>> origin/dylan
         <?php
         if (!isset($_SESSION["user"])) {
         ?>
