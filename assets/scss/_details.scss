@@ -85,3 +85,18 @@ section {
     }
 
 }
+.detail__header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    button{
+        height: fit-content;
+        border-radius: 5px;
+        border: none;
+        background-color: #333;
+        color: white;
+        padding: 10px;
+        margin: 10px 0;
+        cursor: pointer;
+    }
+}

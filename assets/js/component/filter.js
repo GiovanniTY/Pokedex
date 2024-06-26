@@ -1,27 +1,28 @@
 export function filter() {
     const select = document.querySelector('select');
-    
-    select.addEventListener('change', () => {
-        const value = select.value;
-        switch (value) {
-            case "favoris":
-                filterByfavoris()
-                break;
-            case "numero":
-                filterById()
-                break;
-            case "nom":
-                filterByName()
-                break;
-            case "type":
-                filterByType()
-                break;
-        
-            default:
-                displayAll()
-                break;
-        }
-    })
+    if (select!=null) {
+        select.addEventListener('change', () => {
+            const value = select.value;
+            switch (value) {
+                case "favoris":
+                    filterByfavoris()
+                    break;
+                case "numero":
+                    filterById()
+                    break;
+                case "nom":
+                    filterByName()
+                    break;
+                case "type":
+                    filterByType()
+                    break;
+            
+                default:
+                    displayAll()
+                    break;
+            }
+        }) 
+    }
 }
 
 const pokeCard = document.querySelectorAll('.pokemon-card');
@@ -66,8 +67,8 @@ function filterByName() {
 function filterByType() {
     const cards = Array.from(document.querySelectorAll(".pokemon-card"));
     const sortedCards = cards.sort((a, b) => {
-        const typeA = a.querySelector("h2").innerText;
-        const typeB = b.querySelector("h2").innerText;
+        const typeA = a.querySelector(".type").children[0].innerText;
+        const typeB = b.querySelector(".type").children[0].innerText;
         return typeA.localeCompare(typeB);
     });
 

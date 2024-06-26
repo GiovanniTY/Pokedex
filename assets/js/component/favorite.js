@@ -9,7 +9,9 @@ export function favorite() {
     });
 
     for (const element of favoriteElements) {
-        element.addEventListener("click", () => {
+        element.addEventListener("click", (e) => {
+            e.stopPropagation();
+            e.preventDefault();
             element.parentElement.classList.toggle("favorite");
             const pokemonName = element.parentElement.children[3].innerText;
 
@@ -28,10 +30,10 @@ export function favorite() {
     }
 }
 
-function Get(key) {
+export function Get(key) {
     return JSON.parse(localStorage.getItem(key));
 }
 
-function Set(key, value) {
+export function Set(key, value) {
     localStorage.setItem(key, JSON.stringify(value));
 }

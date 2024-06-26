@@ -1,0 +1,69 @@
+#zone__fight {
+    width: 70%;
+    height: 300px;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: #f8f8f8;
+    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+    padding: 10px;
+}
+
+.fight-img {
+    width: 30%;
+    position: absolute;
+}
+
+.first__img {
+    top: 125px;
+    left: -30%;
+    transform: scaleX(-1);
+    animation: fromLeft 1.5s ease-in-out forwards;
+}
+
+.second__img {
+    right: 0;
+    transform: translateX(100%);
+    animation: fromRight 1.5s ease-in-out forwards;
+}
+
+.plateforme{
+    position: absolute;
+    background-color: #e2dbe3;
+    width: 30%;
+    height: 50px;
+    border-radius: 999px;
+    border: 5px solid gray;
+}
+
+.plateforme--left{
+    top: 220px;
+}
+
+.plateforme--right{
+    right: 5%;
+    top: 100px;
+}
+
+#compare__container{
+    display: flex;
+}
+
+@keyframes fromLeft {
+    from {
+        left: -30%;
+    }
+    to {
+       left: 0;
+    }
+}
+
+@keyframes fromRight {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}

@@ -21,6 +21,7 @@ session_start();
 <body>
     <nav>
         <a href="index.php">Home</a>
+        <a href="compare.php">Comparateur</a>
         <?php
         if (!isset($_SESSION["user"])) {
         ?>
@@ -86,7 +87,6 @@ session_start();
                         <span class="<?php echo strtolower($pokemon['type2']); ?>"><?php echo $pokemon['type2']; ?></span>
                         <?php endif; ?>
                     </div>
-
                 </div>
                 </a>
             <?php endforeach; ?>

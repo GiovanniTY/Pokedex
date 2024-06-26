@@ -25,6 +25,7 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
             <body>
             <nav>
         <img id="pokemon" src="assets/img/pokemon.png" alt="pokemon">
+        <a href="compare.php">Comparateur</a>
         <?php
         if (!isset($_SESSION["user"])) {
         ?>
@@ -43,10 +44,13 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
         <?php } ?>
     </nav>
                 <main>
-                <section>
-                <div class="details-container">
-                <div class="pokemon-card">
+                    <section>
+                        <div class="details-container">
+                        <div class="pokemon-card">
+                    <div class="detail__header">
                 <h1><?php echo htmlspecialchars($pokemon['name']); ?></h1>
+                <button class="compare" data-id="<?php echo $pokemon['id']; ?>">Ajouter au comparateur</button>
+                </div>
                 <div class="type">
                 <span class="<?php echo strtolower($pokemon['type1']); ?>">
               <img src="<?php echo $pokemon['type1_image']; ?>" alt="<?php echo $pokemon['name']; ?>">
@@ -111,12 +115,13 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
                     } else if($pokemon['pokedexId']<250){
                         echo '#0'. $pokemon['pokedexId'];
                     }?></p>
-                <img src="<?php echo $pokemon['image']; ?>" alt="<?php echo $pokemon['name']; ?>">
+                <img src="<?php echo $pokemon['image']; ?>" alt="<?php echo $pokemon['name']; ?>" class="pokemon-img">
                 <a href="index.php">Retour à la liste</a>
                 </div>
 
                 </section>
                 </main>
+                <script type="module" src="./assets/js/script.js"></script>
             </body>
             </html>
             <?php
