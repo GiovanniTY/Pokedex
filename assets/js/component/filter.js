@@ -66,8 +66,8 @@ function filterByName() {
 function filterByType() {
     const cards = Array.from(document.querySelectorAll(".pokemon-card"));
     const sortedCards = cards.sort((a, b) => {
-        const typeA = a.querySelector("h2").innerText;
-        const typeB = b.querySelector("h2").innerText;
+        const typeA = a.querySelector(".type").children[0].innerText;
+        const typeB = b.querySelector(".type").children[0].innerText;
         return typeA.localeCompare(typeB);
     });
 
