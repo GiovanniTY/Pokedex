@@ -1,12 +1,30 @@
+@keyframes pulsate {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+
 #logo{
+<<<<<<< HEAD
     width: 40px;
+=======
+    width: 45%;
+>>>>>>> giovanni
     height: auto;
     margin-top: 80px;
 }
 
 #pokeball{
-    height: 100px;
-    width: 100px;
+    height: 200px;
+    width: 200px;
+    animation: pulsate 1.5s infinite;
     
 }
 

@@ -4,6 +4,7 @@
 @import '_type';
 @import '_profile';
 @import '_details';
+@import '_footer';
 
 @mixin responsive($width) {
     @media only screen and (min-width: $width) {
@@ -66,7 +67,7 @@ form{
 }
 .search-container {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     flex-direction: column;
     text-align: center;
@@ -82,6 +83,7 @@ form{
     border-radius: 5px;
     width: 30%;
     margin: 20px 0;
+    margin-right: 200px;
     @include responsive(768px) {
         width: 20%;
     }
@@ -89,12 +91,13 @@ form{
 }
 
 #search-bar {
-    width: 100%;
+    width: 50%;
     padding: 10px;
     font-size: 16px;
     border-radius: 5px;
     border: 1px solid #ccc;
     max-height: 40px;
+   
 }
 
 
@@ -109,3 +112,4 @@ form{
 .error {
     color: rgb(235, 58, 58);
 }
+
