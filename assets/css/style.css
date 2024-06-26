@@ -103,6 +103,10 @@ main {
   font-weight: bold;
 }
 
+.pokemon-card.dark {
+  background-color: rgb(182, 157, 157);
+}
+
 /* Plante */
 .plante {
   background-color: #78C850; /* Vert */

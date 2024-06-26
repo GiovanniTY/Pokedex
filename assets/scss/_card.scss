@@ -36,6 +36,7 @@
                 font-weight: bold;
             }
         }
+        
     }
     .pokemon-card:hover{
         cursor: pointer;
@@ -57,4 +58,8 @@
         color: #B8860B;
         font-weight: bold;
     }
+}
+
+.pokemon-card.dark{
+    background-color: rgb(182, 157, 157);
 }
