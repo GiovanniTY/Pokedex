@@ -20,7 +20,7 @@ session_start();
 
 <body>
     <nav>
-        <img id="pokemon" src="assets/img/pokemon.png" alt="pokemon">
+        <a href="index.php">Home</a>
         <?php
         if (!isset($_SESSION["user"])) {
         ?>

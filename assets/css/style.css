@@ -7,15 +7,27 @@ main {
   width: 100%;
 }
 
+@keyframes pulsate {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 #logo {
-  width: 40%;
+  width: 45%;
   height: auto;
   margin-top: 80px;
 }
 
 #pokeball {
-  height: 100px;
-  width: 100px;
+  height: 200px;
+  width: 200px;
+  animation: pulsate 1.5s infinite;
 }
 
 #pokemon {
@@ -343,6 +355,28 @@ section .pokemon p {
   color: #333;
 }
 
+.pagination {
+  display: flex;
+  gap: 10px;
+}
+
+.pagination a {
+  padding: 10px;
+  text-decoration: none;
+  color: #000;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+}
+
+.pagination a:hover {
+  background-color: #ddd;
+}
+
+.pagination a.active {
+  background-color: #007bff;
+  color: #fff;
+}
+
 body {
   background: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
   margin: 0;
@@ -397,7 +431,7 @@ form {
 
 .search-container {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   flex-direction: column;
   text-align: center;
@@ -416,6 +450,7 @@ form {
   border-radius: 5px;
   width: 30%;
   margin: 20px 0;
+  margin-right: 200px;
 }
 @media only screen and (min-width: 768px) {
   .search-container select {
@@ -424,7 +459,7 @@ form {
 }
 
 #search-bar {
-  width: 100%;
+  width: 50%;
   padding: 10px;
   font-size: 16px;
   border-radius: 5px;
