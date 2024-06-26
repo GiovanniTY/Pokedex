@@ -112,7 +112,7 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
                         echo '#000' . $pokemon['pokedexId'];
                     } else if ($pokemon['pokedexId'] < 100) {
                         echo '#00' . $pokemon['pokedexId'];
-                    } else if($pokemon['pokedexId']<250){
+                    } else if($pokemon['pokedexId']<1000){
                         echo '#0'. $pokemon['pokedexId'];
                     }?></p>
                 <img src="<?php echo $pokemon['image']; ?>" alt="<?php echo $pokemon['name']; ?>" class="pokemon-img">
