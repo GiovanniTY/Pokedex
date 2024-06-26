@@ -1,9 +1,6 @@
 import {favorite} from './component/favorite.js';
 import { filter } from "./component/filter.js";
-import { toggleDarkMode} from "./darkmode.js";
-
-
-
+import { toggleDarkMode } from './component/darkmode.js';
 
 toggleDarkMode();
 
