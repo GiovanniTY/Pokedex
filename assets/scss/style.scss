@@ -1,9 +1,9 @@
-@import 'login.scss';
-@import 'register.scss';
-@import '_img';
 @import '_main';
+@import '_img';
 @import '_card';
 @import '_type';
+@import '_profile';
+@import '_details';
 
 @mixin responsive($width) {
     @media only screen and (min-width: $width) {
@@ -104,4 +104,8 @@ form{
     background: none;
     cursor: pointer; 
     margin-bottom: 10px;
+}
+
+.error {
+    color: rgb(235, 58, 58);
 }

@@ -1,5 +1,5 @@
 <?php
-include('./login-register/config.php'); // Include il file di connessione al database
+include('./login-register/config.php'); 
 
 try {
     // Query per selezionare i dati dei Pokémon

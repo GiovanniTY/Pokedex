@@ -14,7 +14,7 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pokédex</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 
@@ -30,13 +30,15 @@ session_start();
         }
         if (isset($_SESSION["user"])) {
         ?>
-            <a href="./login-register/logout.php">Logout</a>
+            <a href="../login-register/logout.php">Logout</a>
+            <a href="../login-register/profile.php"><img class="avatar-img"src="<?php echo $_SESSION['user']['avatar']?>" alt="avatar"></a>
         <?php   }
         if (!isset($_SESSION["user"])) {
 
         ?>
             <a href="./login-register/register.php">Register</a>
         <?php } ?>
+
     </nav>
     <main>
         <img id="logo" src="assets/img/logo.png" alt="logo">
@@ -66,6 +68,7 @@ session_start();
             include('search.php');
 
             foreach ($pokemonList as $pokemon) : ?>
+             <a href="details.php?id=<?php echo $pokemon['id']; ?>">
                 <div class="pokemon-card">
                     <span class="material-symbols-outlined">favorite</span>
                     <img src="<?php echo $pokemon['image']; ?>" alt="<?php echo $pokemon['name']; ?>">
@@ -85,6 +88,7 @@ session_start();
                     </div>
 
                 </div>
+                </a>
             <?php endforeach; ?>
         </div>
     </main>
