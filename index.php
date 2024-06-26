@@ -30,8 +30,8 @@ session_start();
         }
         if (isset($_SESSION["user"])) {
         ?>
-            <a href="../login-register/logout.php">Logout</a>
-            <a href="../login-register/profile.php"><img class="avatar-img"src="<?php echo $_SESSION['user']['avatar']?>" alt="avatar"></a>
+            <a href="./login-register/logout.php">Logout</a>
+            <a href="./login-register/profile.php"><img class="avatar-img"src="<?php echo $_SESSION['user']['avatar']?>" alt="avatar"></a>
         <?php   }
         if (!isset($_SESSION["user"])) {
 
@@ -62,7 +62,7 @@ session_start();
             </select>
         </div>
         
-        <div class="pokedex-container">
+        <div  id="card-container" class="pokedex-container">
             <?php
             include('function.php');
             include('search.php');
