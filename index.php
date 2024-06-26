@@ -94,7 +94,9 @@ session_start();
     </main>
     <footer>
         <div class="pagination">
-        <?php for ($i = 1; $i <= $total_pages; $i++): ?>
+        <?php 
+        for ($i = 1; $i <= $total_pages; $i++): ?>
+            
             <a href="?page=<?php echo $i; ?>" <?php if ($i == $page) echo 'class="active"'; ?>>
                 <?php echo $i; ?>
             </a>
