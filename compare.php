@@ -1,6 +1,8 @@
 <?php
 include('./login-register/config.php'); 
 
+session_start();
+
 try {
     // Query per selezionare i dati dei Pokémon
     $stmt = $pdo->prepare('SELECT * FROM Pokemon');
@@ -48,13 +50,13 @@ try {
         <button id="dark-mode-toggle">
             <img id="pokeball" src="assets/img/pokeball2.png" alt="pokeball">
         </button>
-        <h1>Compare tes Pokemon</h1>
+        <h1>Compare tes Pokemons</h1>
         <div id="zone__fight">
             <div class="plateforme plateforme--left"></div>
             <div class="plateforme plateforme--right"></div>
         </div>
         <div id="compare__container">
-            <div id="compare__left">
+            <div id="compare__left"></div>
             <div id="compare__right"></div>
         </div>
     </main>

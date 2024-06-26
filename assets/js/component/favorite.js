@@ -10,8 +10,8 @@ export function favorite() {
 
     for (const element of favoriteElements) {
         element.addEventListener("click", (e) => {
-            e.stopPropagation()
-            e.preventDefault()
+            e.stopPropagation();
+            e.preventDefault();
             element.parentElement.classList.toggle("favorite");
             const pokemonName = element.parentElement.children[3].innerText;
 

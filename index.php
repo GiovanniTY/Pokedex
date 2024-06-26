@@ -21,7 +21,6 @@ session_start();
 <body>
     <nav>
         <a href="index.php">Home</a>
-        <img id="pokemon" src="assets/img/pokemon.png" alt="pokemon">
         <a href="compare.php">Comparateur</a>
         <?php
         if (!isset($_SESSION["user"])) {

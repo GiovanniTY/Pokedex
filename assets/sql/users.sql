@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le : mar. 25 juin 2024 à 11:54
+-- Généré le : mer. 26 juin 2024 à 15:33
 -- Version du serveur : 11.3.2-MariaDB
 -- Version de PHP : 8.3.6
 
@@ -32,7 +32,7 @@ CREATE TABLE `users` (
   `id` int(250) NOT NULL,
   `username` varchar(240) NOT NULL,
   `email` varchar(240) NOT NULL,
-  `password` varchar(250) NOT NULL,
+  `password` varchar(500) NOT NULL,
   `avatar` varchar(250) DEFAULT './storage/default_avatars/pikachu.png',
   `description` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -42,8 +42,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `email`, `password`, `avatar`, `description`) VALUES
-(4, 'Justine', 'justine0912@gmail.com', '$2y$10$nawk9RN54NfFpBIy6f/jWe7YFjVCmC/EzJ./aDfRnv3kmxrcbnk2m', './storage/default_avatars/bulbizarre.png', 'lorem ipsum blablablalorem ipsum blablablalorem ipsum blablablalorem ipsum blablabla'),
-(5, 'Giovanni', 'giovanni@gmail.com', '$2y$10$SOJuwgxMdUwBC3AhXi9G4.6XnH5wPXlLF687az3SQQhrX9trbj3mC', './storage/default_avatars/pikachu.png', NULL),
+(4, 'Justine', 'justine0912@gmail.com', '$2y$10$aKQPFej9CQx8pcMh5Gs80OrUIf8ILT2Z763s0EUl1SiACGbvhULHO', './storage/default_avatars/bulbizarre.png', 'lorem ipsum blablablalorem ipsum blablablalorem ipsum blablablalorem ipsum blablabla'),
+(5, 'Giovanni', 'giovanni@gmail.com', '$2y$10$KrL8pAcRshSkZAa5kAqoIO.hY8PxD3LNhzSUSbMEg9WxPfFWQrA6G', './storage/default_avatars/caninos.png', ''),
 (6, 'momoa', 'momoa@gmail.com', '$2y$10$776Y6rRpBNJtyr/qRAg93OgPWmUcqGidgJ7lwTVSorrywL40m8RtW', './storage/default_avatars/pikachu.png', NULL);
 
 --

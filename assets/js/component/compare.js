@@ -37,13 +37,29 @@ export function compare() {
             let img = DOM.generateImg(pokemon.image, pokemon.name, zoneFight, "fight-img")
             if (i==0) {
                 img.classList.add("first__img")
-            } else img.classList.add("second__img")
-            
+                generateColumn(document.querySelector("#compare__left"),pokemon)
+            } else {
+                img.classList.add("second__img")
+                generateColumn(document.querySelector("#compare__right"),pokemon)
+            }
         }
 
     }
 }
 
-function translateImg() {
-    
+function generateColumn(section, pokemon) {
+    const info = DOM.createDiv(section, "info")
+    const stat = DOM.createDiv(section, "stat")
+    DOM.generateElement("p", pokemon.id,info,"compare-id")
+    DOM.generateElement("p", pokemon.name,info,"compare-name")
+    pokemon.type.forEach(element => {
+        console.log(element);
+        DOM.generateElement("p",element,info,element.trim())
+    });
+    DOM.generateElement("p", pokemon.hp,stat,"hp")
+    DOM.generateElement("p", pokemon.attack,stat,"attack")
+    DOM.generateElement("p", pokemon.defense,stat,"defense")
+    DOM.generateElement("p", pokemon.specialAttack,stat,"special-attack")
+    DOM.generateElement("p", pokemon.specialDefense,stat,"special-defense")
+    DOM.generateElement("p", pokemon.speed,stat,"speed")
 }
