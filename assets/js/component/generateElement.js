@@ -47,6 +47,7 @@ export function generateImg(src, alt, section, className) {
     img.setAttribute("alt", alt)
     if(className) img.classList.add(className)
     section.appendChild(img)
+    return img
 }
 
 /**

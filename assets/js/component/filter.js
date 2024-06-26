@@ -1,27 +1,28 @@
 export function filter() {
     const select = document.querySelector('select');
-    
-    select.addEventListener('change', () => {
-        const value = select.value;
-        switch (value) {
-            case "favoris":
-                filterByfavoris()
-                break;
-            case "numero":
-                filterById()
-                break;
-            case "nom":
-                filterByName()
-                break;
-            case "type":
-                filterByType()
-                break;
-        
-            default:
-                displayAll()
-                break;
-        }
-    })
+    if (select!=null) {
+        select.addEventListener('change', () => {
+            const value = select.value;
+            switch (value) {
+                case "favoris":
+                    filterByfavoris()
+                    break;
+                case "numero":
+                    filterById()
+                    break;
+                case "nom":
+                    filterByName()
+                    break;
+                case "type":
+                    filterByType()
+                    break;
+            
+                default:
+                    displayAll()
+                    break;
+            }
+        }) 
+    }
 }
 
 const pokeCard = document.querySelectorAll('.pokemon-card');

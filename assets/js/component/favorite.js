@@ -10,8 +10,13 @@ export function favorite() {
 
     for (const element of favoriteElements) {
         element.addEventListener("click", (e) => {
+<<<<<<< HEAD
             e.stopPropagation()
             e.preventDefault()
+=======
+            e.stopPropagation();
+            e.preventDefault();
+>>>>>>> origin/dylan
             element.parentElement.classList.toggle("favorite");
             const pokemonName = element.parentElement.children[3].innerText;
 
@@ -30,10 +35,10 @@ export function favorite() {
     }
 }
 
-function Get(key) {
+export function Get(key) {
     return JSON.parse(localStorage.getItem(key));
 }
 
-function Set(key, value) {
+export function Set(key, value) {
     localStorage.setItem(key, JSON.stringify(value));
 }

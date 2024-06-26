@@ -3,7 +3,21 @@
 @import '_card';
 @import '_type';
 @import '_details';
+@import '_compare';
 
+<<<<<<< HEAD
+=======
+@mixin responsive($width) {
+    @media only screen and (min-width: $width) {
+        @content;
+    }
+}
+
+*{
+    text-decoration: none;
+}
+
+>>>>>>> origin/dylan
 body{
  background: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
  margin: 0;
