@@ -3,7 +3,7 @@
 $host = 'localhost';
 $db = 'pokedex';
 $user = 'root';
-$password = '';
+$password = 'root';
 
 $url = 'mysql:host=' . $host . ';dbname=' . $db . ';charset=utf8';
 

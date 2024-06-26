@@ -448,10 +448,6 @@ section .pokemon p {
     transform: translateX(0);
   }
 }
-* {
-  text-decoration: none;
-}
-
 .pagination {
   display: flex;
   gap: 10px;
@@ -472,6 +468,10 @@ section .pokemon p {
 .pagination a.active {
   background-color: #007bff;
   color: #fff;
+}
+
+* {
+  text-decoration: none;
 }
 
 body {
@@ -573,4 +573,4 @@ form {
 
 .error {
   color: rgb(235, 58, 58);
-}
+}/*# sourceMappingURL=style.css.map */
