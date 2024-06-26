@@ -412,6 +412,10 @@ section .pokemon p {
   top: 100px;
 }
 
+#compare__container {
+  display: flex;
+}
+
 @keyframes fromLeft {
   from {
     left: -30%;
