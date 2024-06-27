@@ -16,6 +16,10 @@ if (isset($_GET['update']) && $_GET['update'] === 'success') {
     echo '<script>alert("User successfully updated.")</script>';
 }
 
+if (isset($_GET['delete_user']) && $_GET['delete_user'] === 'success') {
+    echo '<script>alert("User successfully deleted.")</script>';
+}
+
 $users = [];
 
 try {
@@ -24,8 +28,6 @@ try {
     $stmt->execute();
 
     $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-    // print_r($users);
 } catch (PDOException $e) {
     print_r($e->getMessage());
 }
