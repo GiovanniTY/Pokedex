@@ -236,6 +236,23 @@ a {
   color: #ebb5f4; /* Dark Purple */
 }
 
+.detail__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.detail__header button {
+  height: -moz-fit-content;
+  height: fit-content;
+  border-radius: 5px;
+  border: none;
+  background-color: #333;
+  color: white;
+  padding: 10px;
+  margin: 10px 0;
+  cursor: pointer;
+}
+
 * {
   font-family: "Roboto", sans-serif;
 }
@@ -373,6 +390,23 @@ nav .avatar-img {
   border-radius: 100%;
   padding: 3px;
   background-color: rgba(0, 0, 0, 0.733);
+}
+
+.detail__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.detail__header button {
+  height: -moz-fit-content;
+  height: fit-content;
+  border-radius: 5px;
+  border: none;
+  background-color: #333;
+  color: white;
+  padding: 10px;
+  margin: 10px 0;
+  cursor: pointer;
 }
 
 * {
