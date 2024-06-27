@@ -55,6 +55,7 @@ session_start();
         <div class="search-container">
             <form method="GET" action="">
                 <input type="text" name="search" id="search-bar" placeholder="Rechercher des Pokémon par leur nom..." autocomplete="off">
+                <div id="suggestions" class="suggestions-container"></div>
                 <button id="search" type="submit">
                     <img id="pikachu" src="assets/img/pikachu.png" alt="pikachu">
                 </button>
@@ -100,14 +101,30 @@ session_start();
     </main>
     <footer>
         <div class="pagination">
-            <?php
-            for ($i = 1; $i <= $total_pages; $i++) : ?>
+    <?php if ($page > 1): ?>
+        <a href="?page=<?php echo ($page - 1); ?>">&laquo; Précédent</a> <!-- Lien vers la page précédente -->
+    <?php endif; ?>
+    
+    <?php
+    // Nombre maximum de pages visibles simultanément
+    $maxVisiblePages = 20;
+    
+    // Calcul de la plage de pages à afficher
+    $start = max(1, $page - floor($maxVisiblePages / 2));
+    $end = min($total_pages, $start + $maxVisiblePages - 1);
+    
+    for ($i = $start; $i <= $end; $i++):
+    ?>
+        <a href="?page=<?php echo $i; ?>" <?php if ($i == $page) echo 'class="active"'; ?>>
+            <?php echo $i; ?>
+        </a>
+    <?php endfor; ?>
+    
+    <?php if ($page < $total_pages): ?>
+        <a href="?page=<?php echo ($page + 1); ?>">Suivant &raquo;</a> <!-- Lien vers la page suivante -->
+    <?php endif; ?>
+</div>
 
-                <a href="?page=<?php echo $i; ?>" <?php if ($i == $page) echo 'class="active"'; ?>>
-                    <?php echo $i; ?>
-                </a>
-            <?php endfor; ?>
-        </div>
     </footer>
     <script type="module" src="./assets/js/script.js"></script>
 </body>

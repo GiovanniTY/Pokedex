@@ -21,6 +21,9 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
                 <meta charset="UTF-8">
                 <title>Détails de <?php echo htmlspecialchars($pokemon['name']); ?></title>
                 <link rel="stylesheet" href="./assets/css/style.css">
+                <script type="module" src="./assets/js/script.js"></script>
+                
+               
             </head>
             <body>
             <nav>
