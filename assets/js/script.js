@@ -4,11 +4,11 @@ import { filter } from "./component/filter.js";
 import { setupSearch } from './component/search.js';
 
 
-
+toggleDarkMode()
 favorite()
 filter()
 compare()
-toggleDarkMode();
+
 
 
 
