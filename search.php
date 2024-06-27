@@ -22,6 +22,8 @@ try {
     $stmt->bindValue(':offset', $offset, PDO::PARAM_INT);
     $stmt->execute();
     $pokemonList = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+
 } catch (PDOException $e) {
     echo '<script>alert("Errore: ' . $e->getMessage() . '");</script>';
     exit;

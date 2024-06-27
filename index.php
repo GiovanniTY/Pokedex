@@ -49,10 +49,11 @@ session_start();
         <div class="search-container">
             <form method="GET" action="">
                 <input type="text" name="search" id="search-bar" 
-                placeholder="Rechercher des Pokémon par leur nom...">
+                placeholder="Rechercher des Pokémon par leur nom..." autocomplete="off">
                 <button id="search"  type="submit">
                     <img id="pikachu"src="assets/img/pikachu.png"alt="pikachu">
                 </button>
+                <div id="suggestions"></div>
             </form>
             <select name="tri" id="tri">
                 <option value="default">Tout afficher</option>
