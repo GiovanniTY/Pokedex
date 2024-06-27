@@ -526,7 +526,7 @@ nav.dark a {
 
 form {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   width: 80%;
   justify-content: center;
   align-items: center;
@@ -584,4 +584,26 @@ form {
 
 .error {
   color: rgb(235, 58, 58);
+}
+
+.suggestions-container {
+  width: 400px;
+  left: 0;
+  right: 0;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-top: none;
+  z-index: 1000;
+  max-height: 100px; /* Limite la hauteur du conteneur des suggestions */
+  overflow-y: auto; /* Ajoute un défilement si le contenu dépasse la hauteur */
+  display: none; /* Cacher les suggestions par défaut */
+}
+
+.suggestions-container div {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.suggestions-container div:hover {
+  background-color: #f0f0f0; /* Change la couleur de fond au survol */
 }/*# sourceMappingURL=style.css.map */
