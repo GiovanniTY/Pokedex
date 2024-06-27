@@ -1,5 +1,5 @@
 export function favorite() {
-    const favoriteElements = document.querySelectorAll(".material-symbols-outlined");
+    const favoriteElements = document.querySelectorAll(".favoriteSpan");
     let favoriteArray = Get("favorite") || [];
 
     favoriteElements.forEach(element => {
