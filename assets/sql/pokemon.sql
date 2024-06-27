@@ -963,20 +963,6 @@ INSERT INTO `pokemon` (`id`, `pokedexId`, `name`, `image`, `sprite`, `slug`, `hp
 (898, 898, 'Sylveroy', 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/898.png', 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/898.png', 'Sylveroy', 100, 80, 80, 80, 80, 80, '8', 'Plante', 'https://static.wikia.nocookie.net/pokemongo/images/c/c5/Grass.png', 'Psy', 'https://static.wikia.nocookie.net/pokemongo/images/2/21/Psychic.png', NULL, NULL, NULL);
 
 --
--- Index pour les tables déchargées
---
-
---
--- Index pour la table `pokemon`
---
-ALTER TABLE `pokemon`
-  ADD PRIMARY KEY (`id`);
-
---
--- AUTO_INCREMENT pour les tables déchargées
---
-
---
 -- AUTO_INCREMENT pour la table `pokemon`
 --
 ALTER TABLE `pokemon`
