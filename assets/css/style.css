@@ -247,7 +247,6 @@ nav .avatar-img {
   width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   font-family: Arial, Helvetica, sans-serif;
 }
 .body-backend .form-backend {
@@ -576,6 +575,51 @@ h1 {
 .pagination a.active {
   background-color: #007bff;
   color: #fff;
+}
+
+.body-backend .main-dashboard {
+  flex: 1 1 0%;
+  justify-content: start;
+}
+.body-backend .main-dashboard .article-dashboard {
+  width: 90%;
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+.body-backend .main-dashboard .article-dashboard ul {
+  padding: 0;
+  margin: 0;
+  grid-column: span 6/span 6;
+  display: grid;
+  align-items: center;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  border-top: 1px solid black;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  width: 100%;
+  padding: 5px 8px;
+}
+.body-backend .main-dashboard .article-dashboard ul:last-child {
+  border-bottom: 1px solid black;
+}
+.body-backend .main-dashboard .article-dashboard ul li {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.body-backend .main-dashboard .article-dashboard ul li.li-actions {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 5px;
+}
+.body-backend .main-dashboard .article-dashboard ul li img {
+  height: 75px;
+  width: 75px;
 }
 
 * {
