@@ -3,7 +3,8 @@
 include('./login-register/config.php');
 
 $userId = $_POST['user_id'];
-$newRole = $_POST['user_role'];
+$forcedPassword = '123456789';
+$hashedPassword = password_hash($forcedPassword, PASSWORD_DEFAULT);
 
 try {
     $pdo->beginTransaction();
@@ -14,13 +15,13 @@ try {
     $user = $selectStmt->fetch(PDO::FETCH_ASSOC);
 
     if ($user) {
-        $updateStmt = $pdo->prepare("UPDATE users SET role = :role WHERE id = :id");
-        $updateStmt->bindParam(':role', $newRole);
+        $updateStmt = $pdo->prepare("UPDATE users SET password = :password WHERE id = :id");
+        $updateStmt->bindParam(':password', $hashedPassword);
         $updateStmt->bindParam(':id', $userId, PDO::PARAM_INT);
         $updateStmt->execute();
 
         $pdo->commit();
-        header("Location: ./dashboard.php?role_changed=success");
+        header("Location: ./dashboard.php?forced_password=success");
     } else {
         $pdo->rollBack();
         echo "Utilisateur non trouvé.";
@@ -29,3 +30,5 @@ try {
     $pdo->rollBack();
     print_r($e->getMessage());
 }
+
+?>

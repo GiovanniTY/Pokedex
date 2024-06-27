@@ -4,6 +4,14 @@ include('./login-register/config.php');
 
 session_start();
 
+if (isset($_GET['role_changed']) && $_GET['role_changed'] === 'success') {
+    echo '<script>alert("Role changed successfully.")</script>';
+}
+
+if (isset($_GET['forced_password']) && $_GET['forced_password'] === 'success') {
+    echo '<script>alert("Password has been successfully forced.")</script>';
+}
+
 $users = [];
 
 try {
