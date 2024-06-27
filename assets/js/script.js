@@ -1,6 +1,8 @@
 import { compare } from './component/compare.js';
 import {favorite} from './component/favorite.js';
 import { filter } from "./component/filter.js";
+import {popup} from './component/popup.js';
+import { navDetails } from "./component/nav.js";
 
 function toggleDarkMode() {
     const darkModeToggle = document.getElementById('dark-mode-toggle');
@@ -88,6 +90,8 @@ document.addEventListener('DOMContentLoaded', function() {
 favorite()
 filter()
 compare()
+popup()
+navDetails()
 
 document.addEventListener('DOMContentLoaded', function() {
     const searchBar = document.getElementById('search-bar');

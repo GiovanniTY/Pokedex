@@ -71,7 +71,7 @@ session_start();
             foreach ($pokemonList as $pokemon) : ?>
              <a href="details.php?id=<?php echo $pokemon['id']; ?>">
                 <div class="pokemon-card">
-                    <span class="material-symbols-outlined">favorite</span>
+                    <span class="material-symbols-outlined favoriteSpan">favorite</span>
                     <img src="<?php echo $pokemon['image']; ?>" alt="<?php echo $pokemon['name']; ?>">
                     <p class="pokedex-id"><?php if ($pokemon['pokedexId'] < 10) {
                         echo '#000' . $pokemon['pokedexId'];

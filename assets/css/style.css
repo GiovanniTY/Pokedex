@@ -306,38 +306,6 @@ section .details-container span img {
 section .details-container p {
   margin-bottom: auto;
 }
-section .stat-bar-container {
-  width: 100%;
-  background-color: #e0e0df;
-  border-radius: 25px;
-  overflow: hidden;
-}
-section .stat-bar {
-  height: 20px;
-  border-radius: 25px;
-  text-align: right;
-  padding-right: 5px;
-  color: white;
-  line-height: 20px; /* Align the text vertically */
-}
-section .hp {
-  background-color: #ff5959;
-}
-section .attack {
-  background-color: #f5ac78;
-}
-section .defense {
-  background-color: #fae078;
-}
-section .special-attack {
-  background-color: #ab82ff;
-}
-section .special-defense {
-  background-color: #78c850;
-}
-section .speed {
-  background-color: #6890f0;
-}
 section .pokemon p {
   position: absolute;
   font-size: 15rem;
@@ -364,6 +332,60 @@ section .pokemon p {
   cursor: pointer;
 }
 
+.stat-bar-container {
+  width: 100%;
+  background-color: #e0e0df;
+  border-radius: 25px;
+  overflow: hidden;
+}
+
+.stat-bar {
+  height: 20px;
+  border-radius: 25px;
+  text-align: right;
+  padding-right: 5px;
+  color: white;
+  line-height: 20px; /* Align the text vertically */
+}
+
+.hp {
+  background-color: #ff5959;
+}
+
+.attack {
+  background-color: #f5ac78;
+}
+
+.defense {
+  background-color: #fae078;
+}
+
+.special-attack {
+  background-color: #ab82ff;
+}
+
+.special-defense {
+  background-color: #78c850;
+}
+
+.speed {
+  background-color: #6890f0;
+}
+
+.arrow {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.arrow span {
+  position: inherit;
+  margin: 0 10px;
+}
+
+h1 {
+  color: #3D7DCA;
+}
+
 #zone__fight {
   width: 70%;
   height: 300px;
@@ -377,20 +399,21 @@ section .pokemon p {
 }
 
 .fight-img {
-  width: 30%;
-  position: absolute;
+  width: 100px;
+  transform: translateY(-30%);
+}
+@media only screen and (min-width: 768px) {
+  .fight-img {
+    width: 175px;
+  }
 }
 
 .first__img {
-  top: 125px;
-  left: -30%;
-  transform: scaleX(-1);
+  transform: scaleX(-1) translateY(-30%);
   animation: fromLeft 1.5s ease-in-out forwards;
 }
 
 .second__img {
-  right: 0;
-  transform: translateX(100%);
   animation: fromRight 1.5s ease-in-out forwards;
 }
 
@@ -401,6 +424,9 @@ section .pokemon p {
   height: 50px;
   border-radius: 999px;
   border: 5px solid gray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .plateforme--left {
@@ -412,32 +438,105 @@ section .pokemon p {
   top: 100px;
 }
 
-#compare__container {
-  display: flex;
-}
-
 @keyframes fromLeft {
   from {
-    left: -30%;
+    transform: translateX(-100%) translateY(-30%) scaleX(-1);
   }
   to {
-    left: 0;
+    transform: translateX(0) translateY(-30%) scaleX(-1);
   }
 }
 @keyframes fromRight {
   from {
-    transform: translateX(100%);
+    transform: translateX(100%) translateY(-30%);
   }
   to {
-    transform: translateX(0);
+    transform: translateX(0) translateY(-30%);
   }
 }
+#compare__container {
+  width: 70%;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+#compare__container #compare__left, #compare__container #compare__right {
+  background-color: #fcf4de;
+  border: 4px solid #505c44;
+  width: 45%;
+  padding: 10px;
+}
+#compare__container #compare__left .info, #compare__container #compare__right .info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10px;
+}
+#compare__container #compare__left .info p, #compare__container #compare__right .info p {
+  margin: 5px 0;
+  font-weight: bold;
+}
+#compare__container #compare__left .info span, #compare__container #compare__right .info span {
+  font-size: 12px;
+  padding: 2px;
+  margin: 10px 3px;
+  font-weight: bold;
+  border-radius: 5px;
+  border: 1px solid #333;
+}
+@media only screen and (min-width: 768px) {
+  #compare__container #compare__left .info span, #compare__container #compare__right .info span {
+    font-size: 16px;
+    padding: 5px;
+    margin: 10px 5px;
+  }
+}
+#compare__container #compare__left .stat-bar-container, #compare__container #compare__right .stat-bar-container {
+  margin: 3px 0;
+}
+#compare__container #compare__left .btn__container, #compare__container #compare__right .btn__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#compare__container #compare__left .btn__container button, #compare__container #compare__right .btn__container button {
+  margin: 3px 0;
+  background-color: #FFCB05;
+  border: 2px solid #3D7DCA;
+  color: #333;
+  border-radius: 3px;
+  padding: 3px;
+}
+#compare__container #compare__left {
+  border-radius: 10px 40px 10px 40px;
+}
+#compare__container #compare__right {
+  border-radius: 40px 10px 40px 10px;
+}
+
+#add__popup {
+  display: none;
+  position: fixed;
+  bottom: 5px;
+  right: 5px;
+  z-index: 1;
+  width: 225px;
+  height: auto;
+  border: 1px solid #333;
+  background-color: var(--background);
+  padding: 10px;
+  border-radius: 15px;
+  overflow: hidden;
+  text-align: center;
+}
+
 * {
   text-decoration: none;
 }
 
 body {
-  background: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+  background: #f5f5f5;
   margin: 0;
   width: 100%;
   display: flex;

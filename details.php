@@ -21,6 +21,7 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
                 <meta charset="UTF-8">
                 <title>Détails de <?php echo htmlspecialchars($pokemon['name']); ?></title>
                 <link rel="stylesheet" href="./assets/css/style.css">
+                <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
             </head>
             <body>
             <nav>
@@ -118,10 +119,16 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
                 <img src="<?php echo $pokemon['image']; ?>" alt="<?php echo $pokemon['name']; ?>" class="pokemon-img">
                 <a href="index.php">Retour à la liste</a>
                 </div>
-
-                </section>
+            </section>
+            <div class="arrow">
+                <span class="material-symbols-outlined arrow--left">arrow_back_ios</span>
+                <span class="material-symbols-outlined arrow--right">arrow_forward_ios</span>
+            </div>
                 </main>
                 <script type="module" src="./assets/js/script.js"></script>
+                <div id="add__popup">
+                     <p>Vous avez bien ajouté <?php echo $pokemon['name']; ?> au comparateur !</p>
+                </div>
             </body>
             </html>
             <?php
