@@ -12,6 +12,10 @@ if (isset($_GET['forced_password']) && $_GET['forced_password'] === 'success') {
     echo '<script>alert("Password has been successfully forced.")</script>';
 }
 
+if (isset($_GET['update']) && $_GET['update'] === 'success') {
+    echo '<script>alert("User successfully updated.")</script>';
+}
+
 $users = [];
 
 try {
@@ -76,11 +80,11 @@ try {
                         </form>
                     </li>
                     <li class="li-actions">
-                        <form action="update_user.php">
+                        <form action="update_user.php" method="POST">
                             <input type="hidden" name="user_id" value="<?php echo $user['id'] ?>">
                             <button type="submit" name="edit_user">Edit user</button>
                         </form>
-                        <form action="delete_user.php">
+                        <form action="delete_user.php" method="POST">
                             <input type="hidden" name="user_id" value="<?php echo $user['id'] ?>">
                             <button type="submit" name="delete_user">Delete user</button>
                         </form>
