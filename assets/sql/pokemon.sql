@@ -26,7 +26,7 @@ SET time_zone = "+00:00";
 --
 -- Structure de la table `pokemon`
 --
-
+DROP TABLE IF EXISTS pokemon;
 CREATE TABLE `pokemon` (
    id INTEGER PRIMARY KEY AUTO_INCREMENT,
   `pokedexId` int(11) NOT NULL,
