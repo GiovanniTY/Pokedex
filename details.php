@@ -1,19 +1,18 @@
 <?php
-include('./login-register/config.php'); 
+session_start();
+include('./login-register/config.php');
 
 // Vérifier si l'ID est passé dans l'URL
 if (isset($_GET['id']) && is_numeric($_GET['id'])) {
     $pokemonId = $_GET['id'];
 
     try {
-
         $stmt = $pdo->prepare('SELECT * FROM Pokemon WHERE id = :id');
         $stmt->bindParam(':id', $pokemonId, PDO::PARAM_INT);
         $stmt->execute();
         $pokemon = $stmt->fetch(PDO::FETCH_ASSOC);
 
         if ($pokemon) {
-
             ?>
             <!DOCTYPE html>
             <html lang="fr">
@@ -21,14 +20,11 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
                 <meta charset="UTF-8">
                 <title>Détails de <?php echo htmlspecialchars($pokemon['name']); ?></title>
                 <link rel="stylesheet" href="./assets/css/style.css">
-                <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-                <script type="module" src="./assets/js/script.js"></script>
-                
-               
+                <script defer src="./assets/component/progressbar.js"></script>
             </head>
             <body>
             <nav>
-        <img id="pokemon" src="assets/img/pokemon.png" alt="pokemon">
+        <a href="index.php">Home</a>
         <a href="compare.php">Comparateur</a>
         <?php
         if (!isset($_SESSION["user"])) {
@@ -40,98 +36,118 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
         if (isset($_SESSION["user"])) {
         ?>
             <a href="./login-register/logout.php">Logout</a>
-        <?php   }
+            <?php
+            if ($_SESSION['user']['role'] === 'admin') {
+            ?>
+                <a href="dashboard.php">Dashboard</a>
+            <?php   } ?>
+            <a href="./login-register/profile.php"><img class="avatar-img" src="<?php echo $_SESSION['user']['avatar'] ?>" alt="avatar"></a>
+        <?php
+        }
         if (!isset($_SESSION["user"])) {
 
         ?>
             <a href="./login-register/register.php">Register</a>
         <?php } ?>
+
     </nav>
-                <main>
-                    <section>
-                        <div class="details-container">
+            <main>
+                <section>
+                    <div class="details-container">
                         <div class="pokemon-card">
-                    <div class="detail__header">
-                <h1><?php echo htmlspecialchars($pokemon['name']); ?></h1>
-                <button class="compare" data-id="<?php echo $pokemon['id']; ?>">Ajouter au comparateur</button>
+                            <div class="detail__header">
+                                <h1><?php echo htmlspecialchars($pokemon['name']); ?></h1>
+                                <button class="compare" data-id="<?php echo $pokemon['id']; ?>">Ajouter au comparateur</button>
+                            </div>
+                            <div class="type">
+                                <span class="<?php echo strtolower($pokemon['type1']); ?>">
+                                    <img src="<?php echo $pokemon['type1_image']; ?>" alt="<?php echo $pokemon['name']; ?>">
+                                    <?php echo $pokemon['type1']; ?>
+                                </span>
+                                <?php if (!empty($pokemon['type2'])) : ?>
+                                    <span class="<?php echo strtolower($pokemon['type2']); ?>">
+                                        <img src="<?php echo $pokemon['type2_image']; ?>" alt="<?php echo $pokemon['name']; ?>">
+                                        <?php echo $pokemon['type2']; ?>
+                                    </span>
+                                <?php endif; ?>
+                            </div>
+                            <p>HP</p>
+                            <div class="stat-bar-container" data-hp="<?php echo htmlspecialchars($pokemon['hp']); ?>">
+                                <div class="stat-bar hp" id="hpBar"></div>
+                            </div>
+                            <p>Attaque</p>
+                            <div class="stat-bar-container" data-attack="<?php echo htmlspecialchars($pokemon['attack']); ?>">
+                                <div class="stat-bar attack" id="attackBar"></div>
+                            </div>
+                            <p>Défense</p>
+                            <div class="stat-bar-container" data-defense="<?php echo htmlspecialchars($pokemon['defense']); ?>">
+                                <div class="stat-bar defense" id="defenseBar"></div>
+                            </div>
+                            <p>Special Attaque</p>
+                            <div class="stat-bar-container" data-attackSpecial="<?php echo htmlspecialchars($pokemon['special_attack']); ?>">
+                                <div class="stat-bar special-attack" id="attackSpecialBar"></div>
+                            </div>
+                            <p>Special Defense</p>
+                            <div class="stat-bar-container" data-defenseSpecial="<?php echo htmlspecialchars($pokemon['special_defense']); ?>">
+                                <div class="stat-bar special-defense" id="defenseSpecialBar"></div>
+                            </div>
+                            <p>Vitesse</p>
+                            <div class="stat-bar-container" data-speed="<?php echo htmlspecialchars($pokemon['speed']); ?>">
+                                <div class="stat-bar speed" id="speedBar"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                    <div class="pokemon">
+                        <p data-heading="Frozen" contenteditable class="pokedex-id">
+                            <?php 
+                                if ($pokemon['pokedexId'] < 10) {
+                                    echo '#000' . $pokemon['pokedexId'];
+                                } else if ($pokemon['pokedexId'] < 100) {
+                                    echo '#00' . $pokemon['pokedexId'];
+                                } else if($pokemon['pokedexId']<1000){
+                                    echo '#0'. $pokemon['pokedexId'];
+                                }
+                            ?>
+                        
+		
+		<span class="animation" aria-hidden="true">
+        <?php 
+                                if ($pokemon['pokedexId'] < 10) {
+                                    echo '#000' . $pokemon['pokedexId'];
+                                } else if ($pokemon['pokedexId'] < 100) {
+                                    echo '#00' . $pokemon['pokedexId'];
+                                } else if($pokemon['pokedexId']<1000){
+                                    echo '#0'. $pokemon['pokedexId'];
+                                }
+                            ?>
+        </span> 
+                            </p>
+
+
+
+
+
+                        <img src="<?php echo $pokemon['image']; ?>" alt="<?php echo $pokemon['name']; ?>" class="pokemon-img">
+                    </div>
+
+
+                    <div class="container-evolution">
+                    <div class="evolution">
+                    <img src="<?php echo $pokemon['image']; ?>" alt="<?php echo $pokemon['name']; ?>" class="pokemon-img">
+                    <img src="<?php echo $pokemon['evolution_image1']; ?>" alt="<?php echo $pokemon['name']; ?>" class="pokemon-img">
+                    <img src="<?php echo $pokemon['evolution_image2']; ?>">
+                    </div>
                 </div>
-                <div class="type">
-                <span class="<?php echo strtolower($pokemon['type1']); ?>">
-              <img src="<?php echo $pokemon['type1_image']; ?>" alt="<?php echo $pokemon['name']; ?>">
-              <?php echo $pokemon['type1']; ?>
-              </span>
-
-            <?php if (!empty($pokemon['type2'])) : ?>
-             <span class="<?php echo strtolower($pokemon['type2']); ?>">
-              <img src="<?php echo $pokemon['type2_image']; ?>" alt="<?php echo $pokemon['name']; ?>">
-              <?php echo $pokemon['type2']; ?>
-              </span>
-                        <?php endif; ?>
-                    </div>
-
-                    <p>HP</p>
-                    <div class="stat-bar-container">
-                        <div class="stat-bar hp" style="width: <?php echo htmlspecialchars($pokemon['hp']); ?>%;">
-                        </div>
-                    </div>
 
 
+                </section>
 
-                    <p>Attaque</p>
-                    <div class="stat-bar-container">
-                        <div class="stat-bar attack" style="width: <?php echo htmlspecialchars($pokemon['attack']); ?>%;">
-                        </div>
-                    </div>
+              
 
-
-                    <p>Défense</p>
-                    <div class="stat-bar-container">
-                        <div class="stat-bar defense" style="width: <?php echo htmlspecialchars($pokemon['defense']); ?>%;">
-                        </div>
-                    </div>
-
-
-                    <p>Special Attaque</p>
-                    <div class="stat-bar-container">
-                        <div class="stat-bar special-attack" style="width: <?php echo htmlspecialchars($pokemon['special_attack']); ?>%;">
-                        </div>
-                    </div>
-
-                    <p>Special Defense</p>
-                    <div class="stat-bar-container">
-                        <div class="stat-bar special-defense" style="width: <?php echo htmlspecialchars($pokemon['special_defense']); ?>%;">
-                        </div>
-                    </div>
-
-                    <p>Vitesse</p>
-                    <div class="stat-bar-container">
-                        <div class="stat-bar speed" style="width: <?php echo htmlspecialchars($pokemon['speed']); ?>%;">
-                        </div>
-                    </div>
-                </div>
-                </div>
-
-                <div class="pokemon">
-                <p class="pokedex-id"><?php if ($pokemon['pokedexId'] < 10) {
-                        echo '#000' . $pokemon['pokedexId'];
-                    } else if ($pokemon['pokedexId'] < 100) {
-                        echo '#00' . $pokemon['pokedexId'];
-                    } else if($pokemon['pokedexId']<1000){
-                        echo '#0'. $pokemon['pokedexId'];
-                    }?></p>
-                <img src="<?php echo $pokemon['image']; ?>" alt="<?php echo $pokemon['name']; ?>" class="pokemon-img">
-                <a href="index.php">Retour à la liste</a>
-                </div>
-            </section>
-            <div class="arrow">
-                <span class="material-symbols-outlined arrow--left">arrow_back_ios</span>
-                <span class="material-symbols-outlined arrow--right">arrow_forward_ios</span>
-            </div>
-                </main>
-                <script type="module" src="./assets/js/script.js"></script>
-                <div id="add__popup">
-                     <p>Vous avez bien ajouté <?php echo $pokemon['name']; ?> au comparateur !</p>
-                </div>
+            </main>
+            <script type="module" src="./assets/js/script.js"></script>
             </body>
             </html>
             <?php
