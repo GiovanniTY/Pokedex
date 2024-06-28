@@ -16,6 +16,9 @@ popup();
 navDetails();
 setupAutocomplete();
 
+
+
+
 /* document.addEventListener("DOMContentLoaded", function () {
   const searchBar = document.getElementById("search-bar");
   const pokedexContainer = document.getElementById("pokedex-container");
