@@ -50,11 +50,11 @@ session_start();
             <form method="GET" action="">
                 <input type="text" name="search" id="search-bar" 
                 placeholder="Rechercher des Pokémon par leur nom..." autocomplete="off">
-                <div id="suggestions" class="suggestions-container"></div>
+                
                 <button id="search"  type="submit">
                     <img id="pikachu"src="assets/img/pikachu.png"alt="pikachu">
                 </button>
-                <div id="suggestions"></div>
+                <datalist id="suggestions" class="suggestions-container"></>
             </form>
             <select name="tri" id="tri">
                 <option value="default">Tout afficher</option>
@@ -64,6 +64,8 @@ session_start();
                 <option value="type">Type</option>
             </select>
         </div>
+        <div id="suggestions" class="suggestions-container"></div>
+        
         
         <div  id="card-container" class="pokedex-container">
             <?php

@@ -1,43 +1,35 @@
-// JavaScript per gestire l'autocomplete utilizzando i dati dal server PHP
+// JavaScript pour gérer l'autocomplete
  export function setupAutocomplete() {
     const searchBar = document.getElementById('search-bar');
-    const suggestionsDiv = document.getElementById('suggestions');
+    const suggestionsList = document.getElementById('suggestions');
 
-    // Richiesta AJAX per recuperare i nomi dei Pokémon dal server PHP
+    // Récupère les noms des Pokémon du serveur PHP
     fetch('array.php')
         .then(response => response.json())
         .then(pokemonNames => {
             searchBar.addEventListener('input', function() {
                 const searchTerm = searchBar.value.trim().toLowerCase();
-                suggestionsDiv.innerHTML = '';
+                suggestionsList.innerHTML = ''; // Vider les suggestions précédentes
 
                 if (searchTerm.length === 0) {
-                    suggestionsDiv.style.display = 'none';
                     return;
                 }
 
                 const matchingPokemons = pokemonNames.filter(pokemon =>
-                    pokemon.toLowerCase().includes(searchTerm)
+                    pokemon.toLowerCase().startsWith(searchTerm)
                 );
 
                 if (matchingPokemons.length > 0) {
                     matchingPokemons.forEach(pokemon => {
-                        const suggestion = document.createElement('div');
-                        suggestion.textContent = pokemon;
-                        suggestion.addEventListener('click', function() {
-                            searchBar.value = pokemon;
-                            suggestionsDiv.style.display = 'none';
-                        });
-                        suggestionsDiv.appendChild(suggestion);
+                        const option = document.createElement('option');
+                        option.value = pokemon;
+                        suggestionsList.appendChild(option);
                     });
-                    suggestionsDiv.style.display = 'block';
-                } else {
-                    suggestionsDiv.style.display = 'none';
                 }
             });
         })
-        .catch(error => console.error('Errore durante il fetch dei nomi dei Pokémon:', error));
+        .catch(error => console.error('Erreur lors du fetch des noms des Pokémon:', error));
 }
 
-// Richiama la funzione per inizializzare l'autocomplete
+// Appelle la fonction pour initialiser l'autocomplete
 setupAutocomplete();
