@@ -594,10 +594,6 @@ h1 {
   top: 200px;
 }
 
-#compare__container {
-  display: flex;
-}
-
 @keyframes fromLeft {
   from {
     transform: translateX(-100%) translateY(-30%) scaleX(-1);

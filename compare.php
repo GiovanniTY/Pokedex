@@ -1,8 +1,6 @@
 <?php
 include('./login-register/config.php'); 
 
-session_start();
-
 try {
     // Query per selezionare i dati dei Pokémon
     $stmt = $pdo->prepare('SELECT * FROM Pokemon');
