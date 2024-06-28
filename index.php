@@ -1,4 +1,4 @@
-<?php
+<div?php
 
 session_start();
 // if (!isset($_SESSION['user'])) {
@@ -55,11 +55,12 @@ session_start();
         <div class="search-container">
             <form method="GET" action="">
                 <input type="text" name="search" id="search-bar" placeholder="Rechercher des Pokémon par leur nom..." autocomplete="off">
+                <div id="suggestions" size="5" style="display: none;"></div>
                 
                 <button id="search" type="submit">
                     <img id="pikachu" src="assets/img/pikachu.png" alt="pikachu">
                 </button>
-                <datalist id="suggestions" class="suggestions-container"></datalist>
+                
             </form>
             <select name="tri" id="tri">
                 <option value="default">Tout afficher</option>
@@ -69,9 +70,6 @@ session_start();
                 <option value="type">Type</option>
             </select>
         </div>
-        <div id="suggestions" class="suggestions-container"></div>
-        
-
         <div id="card-container" class="pokedex-container">
             <?php
             include('function.php');
