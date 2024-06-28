@@ -28,7 +28,6 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
             </head>
             <body>
             <nav>
-        <img id="pokemon" src="assets/img/pokemon.png" alt="pokemon">
         <a href="compare.php">Comparateur</a>
         <?php
         if (!isset($_SESSION["user"])) {

@@ -25,7 +25,7 @@ try {
 </head>
 <body>
 <nav>
-        <img id="pokemon" src="assets/img/pokemon.png" alt="pokemon">
+        
         <?php
         if (!isset($_SESSION["user"])) {
         ?>
