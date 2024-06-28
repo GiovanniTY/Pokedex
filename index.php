@@ -20,6 +20,10 @@ session_start();
 
 <body>
     <nav>
+    <button id="dark-mode-toggle">
+        
+    <img id="pokeball" src="assets/img/pokeball2.png" alt="pokeball">
+    </button>
         <a href="index.php">Home</a>
         <a href="compare.php">Comparateur</a>
         <?php
@@ -49,9 +53,7 @@ session_start();
     </nav>
     <main>
         <img id="logo" src="assets/img/logo.png" alt="logo">
-        <button id="dark-mode-toggle">
-            <img id="pokeball" src="assets/img/pokeball2.png" alt="pokeball">
-        </button>
+        
         <div class="search-container">
             <form method="GET" action="">
                 <input type="text" name="search" id="search-bar" placeholder="Rechercher des Pokémon par leur nom..." autocomplete="off">
