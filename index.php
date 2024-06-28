@@ -59,7 +59,7 @@ session_start();
                 <button id="search" type="submit">
                     <img id="pikachu" src="assets/img/pikachu.png" alt="pikachu">
                 </button>
-                <datalist id="suggestions" class="suggestions-container"></>
+                <datalist id="suggestions" class="suggestions-container"></datalist>
             </form>
             <select name="tri" id="tri">
                 <option value="default">Tout afficher</option>
