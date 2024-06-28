@@ -16,14 +16,10 @@ session_start();
     <title>Pokédex</title>
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 
 <body>
     <nav>
-        <a href="index.php">Home</a>
-        <a href="compare.php">Comparateur</a>
         <a href="index.php">Home</a>
         <a href="compare.php">Comparateur</a>
         <?php
@@ -44,20 +40,11 @@ session_start();
             <a href="./login-register/profile.php"><img class="avatar-img" src="<?php echo $_SESSION['user']['avatar'] ?>" alt="avatar"></a>
         <?php
         }
-            <?php
-            if ($_SESSION['user']['role'] === 'admin') {
-            ?>
-                <a href="dashboard.php">Dashboard</a>
-            <?php   } ?>
-            <a href="./login-register/profile.php"><img class="avatar-img" src="<?php echo $_SESSION['user']['avatar'] ?>" alt="avatar"></a>
-        <?php
-        }
         if (!isset($_SESSION["user"])) {
 
         ?>
             <a href="./login-register/register.php">Register</a>
         <?php } ?>
-
 
     </nav>
     <main>
@@ -74,13 +61,6 @@ session_start();
                 </button>
                 <datalist id="suggestions" class="suggestions-container"></datalist>
             </form>
-            <select name="tri" id="tri">
-                <option value="default">Tout afficher</option>
-                <option value="favoris">Favoris</option>
-                <option value="numero">Numéro</option>
-                <option value="nom">Nom</option>
-                <option value="type">Type</option>
-            </select>
             <select name="tri" id="tri">
                 <option value="default">Tout afficher</option>
                 <option value="favoris">Favoris</option>
