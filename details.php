@@ -147,6 +147,9 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
               
 
             </main>
+            <div id="add__popup">
+                     <p>Vous avez bien ajouté <?php echo $pokemon['name']; ?> au comparateur !</p>
+                </div>
             <script type="module" src="./assets/js/script.js"></script>
             </body>
             </html>
