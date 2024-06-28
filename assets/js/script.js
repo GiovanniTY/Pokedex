@@ -4,6 +4,7 @@ import { filter } from "./component/filter.js";
 import { popup } from "./component/popup.js";
 import { navDetails } from "./component/nav.js";
 import { setupAutocomplete } from "./component/autosuggestion.js";
+import { animateProgressBar } from "./component/progressbar.js;"
 
 function toggleDarkMode() {
   const darkModeToggle = document.getElementById("dark-mode-toggle");
@@ -86,6 +87,7 @@ compare();
 popup();
 navDetails();
 setupAutocomplete();
+animateProgressBar();
 
 document.addEventListener("DOMContentLoaded", function () {
   const searchBar = document.getElementById("search-bar");
