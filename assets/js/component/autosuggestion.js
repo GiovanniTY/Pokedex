@@ -1,7 +1,7 @@
 // JavaScript pour gérer l'autocomplete
- export function setupAutocomplete() {
+export function setupAutocomplete() {
     const searchBar = document.getElementById('search-bar');
-    const suggestionsList = document.getElementById('suggestions');
+    const suggestionsDiv = document.getElementById('suggestions');
 
     // Récupère les noms des Pokémon du serveur PHP
     fetch('array.php')
@@ -9,9 +9,10 @@
         .then(pokemonNames => {
             searchBar.addEventListener('input', function() {
                 const searchTerm = searchBar.value.trim().toLowerCase();
-                suggestionsList.innerHTML = ''; // Vider les suggestions précédentes
+                suggestionsDiv.innerText = ''; // Vider les suggestions précédentes
 
                 if (searchTerm.length === 0) {
+                    suggestionsDiv.style.display = 'none';
                     return;
                 }
 
@@ -21,10 +22,17 @@
 
                 if (matchingPokemons.length > 0) {
                     matchingPokemons.forEach(pokemon => {
-                        const option = document.createElement('option');
-                        option.value = pokemon;
-                        suggestionsList.appendChild(option);
+                        const suggestion = document.createElement('div');
+                        suggestion.textContent = pokemon;
+                        suggestion.addEventListener('click', function() {
+                            searchBar.value = pokemon;
+                            suggestionsDiv.style.display = 'none';
+                        });
+                        suggestionsDiv.appendChild(suggestion);
                     });
+                    suggestionsDiv.style.display = 'block';
+                } else {
+                    suggestionsDiv.style.display = 'none';
                 }
             });
         })
