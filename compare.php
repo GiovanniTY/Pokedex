@@ -23,6 +23,8 @@ try {
 </head>
 <body>
 <nav>
+        <a href="index.php">Home</a>
+        <a href="compare.php">Comparateur</a>
         <?php
         if (!isset($_SESSION["user"])) {
         ?>
@@ -32,15 +34,21 @@ try {
         }
         if (isset($_SESSION["user"])) {
         ?>
-            <a href="../login-register/logout.php">Logout</a>
-            <a href="../login-register/profile.php"><img class="avatar-img"src="<?php echo $_SESSION['user']['avatar']?>" alt="avatar"></a>
-        <?php   }
+            <a href="./login-register/logout.php">Logout</a>
+            <?php
+            if ($_SESSION['user']['role'] === 'admin') {
+            ?>
+                <a href="dashboard.php">Dashboard</a>
+            <?php   } ?>
+            <a href="./login-register/profile.php"><img class="avatar-img" src="<?php echo $_SESSION['user']['avatar'] ?>" alt="avatar"></a>
+        <?php
+        }
         if (!isset($_SESSION["user"])) {
 
         ?>
             <a href="./login-register/register.php">Register</a>
         <?php } ?>
-        <a href="./index.php">Return to homepage</a>
+
     </nav>
     <main>
         <button id="dark-mode-toggle">
