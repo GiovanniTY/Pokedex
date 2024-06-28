@@ -46,7 +46,6 @@ try {
         <a href="./index.php">Return to homepage</a>
     </nav>
     <main>
-        <img id="logo" src="assets/img/logo.png" alt="logo">
         <button id="dark-mode-toggle">
             <img id="pokeball" src="assets/img/pokeball2.png" alt="pokeball">
         </button>

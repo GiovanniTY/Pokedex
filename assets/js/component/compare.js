@@ -33,7 +33,10 @@ export function compare() {
     const zoneFight = document.querySelector("#zone__fight")
     const zoneFightLeft = document.querySelector(".plateforme--left")
     const zoneFightRight = document.querySelector(".plateforme--right")
+
+    
     if(compareContainer!=null && zoneFight!=null) {
+        DOM.generateImg("assets/img/bg-fight.png", "plateforme", zoneFight, "bg-fight")
         compareArray = Get("compare") || []
         for (let i = 0; i < compareArray.length; i++) {
             const pokemon = compareArray[i];
@@ -61,41 +64,26 @@ function generateColumn(section, pokemon) {
     const type = DOM.createDiv(info, "type")
     pokemon.type.forEach(element => {
         console.log(element);
-        DOM.generateElement("span",element,type,element.trim().toLowerCase())
+        if(element!=""){
+            DOM.generateElement("span",element,type,element.trim().toLowerCase())
+        }
     });
 
-    const barHP = DOM.createDiv(stat,"stat-bar-container")
-    const hp = DOM.createDiv(barHP, "hp")
-    hp.classList.add("stat-bar")
-    hp.style.width = pokemon.hp
+    createStatBar(stat, "hp", "HP", pokemon.hp);
+    createStatBar(stat, "attack", "Attack", pokemon.attack);
+    createStatBar(stat, "defense", "Defense", pokemon.defense);
+    createStatBar(stat, "special-attack", "Special Attack", pokemon.specialAttack);
+    createStatBar(stat, "special-defense", "Special Defense", pokemon.specialDefense);
+    createStatBar(stat, "speed", "Speed", pokemon.speed);
 
-    const barAttack = DOM.createDiv(stat,"stat-bar-container")
-    const attack = DOM.createDiv(barAttack, "attack")
-    attack.classList.add("stat-bar")
-    attack.style.width = pokemon.attack
+}
 
-    const barDefense = DOM.createDiv(stat,"stat-bar-container")
-    const defense = DOM.createDiv(barDefense, "defense")
-    defense.classList.add("stat-bar")
-    defense.style.width = pokemon.defense
-
-    const barSpecialAttack = DOM.createDiv(stat,"stat-bar-container")
-    const specialAttack = DOM.createDiv(barSpecialAttack, "special-attack")
-    specialAttack.classList.add("stat-bar")
-    specialAttack.style.width = pokemon.specialAttack
-    
-    
-    const barSpecialDefense = DOM.createDiv(stat,"stat-bar-container")
-    const specialDefense = DOM.createDiv(barSpecialDefense, "special-defense")
-    specialDefense.classList.add("stat-bar")
-    specialDefense.style.width = pokemon.specialDefense
-
-    
-    const barSpeed = DOM.createDiv(stat,"stat-bar-container")
-    const speed = DOM.createDiv(barSpeed, "speed")
-    speed.classList.add("stat-bar")
-    speed.style.width = pokemon.speed
-
+function createStatBar(stat, className, label, value) {
+    const barContainer = DOM.createDiv(stat, "stat-bar-container");
+    const bar = DOM.createDiv(barContainer, className);
+    bar.classList.add("stat-bar");
+    bar.style.width = value;
+    bar.innerText = `${label} : ${value}`;
 }
 
 function generateBtn(section, id) {
