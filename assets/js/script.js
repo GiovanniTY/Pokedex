@@ -5,6 +5,7 @@ import { popup } from "./component/popup.js";
 import { navDetails } from "./component/nav.js";
 import { setupAutocomplete } from "./component/autosuggestion.js";
 import { toggleDarkMode } from "./component/darkmode.js";
+import { animateProgressBar } from "./component/progressbar.js";
 
 
 
@@ -15,6 +16,7 @@ compare();
 popup();
 navDetails();
 setupAutocomplete();
+animateProgressBar();
 
 /* document.addEventListener("DOMContentLoaded", function () {
   const searchBar = document.getElementById("search-bar");
