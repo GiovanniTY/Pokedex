@@ -649,7 +649,39 @@ h1 {
   }
 }
 #compare__container #compare__left .stat-bar-container, #compare__container #compare__right .stat-bar-container {
-  margin: 3px 0;
+  width: 100%;
+  background-color: #e0e0df;
+  border-radius: 25px;
+  overflow: hidden;
+  margin-top: 2%;
+}
+#compare__container #compare__left .stat-bar, #compare__container #compare__right .stat-bar {
+  height: 20px;
+  border-radius: 25px;
+  text-align: right;
+  padding-right: 5px;
+  color: white;
+  line-height: 20px;
+  width: 0;
+  transition: width 2s ease;
+}
+#compare__container #compare__left .hp, #compare__container #compare__right .hp {
+  background-color: #ff5959;
+}
+#compare__container #compare__left .attack, #compare__container #compare__right .attack {
+  background-color: #f5ac78;
+}
+#compare__container #compare__left .defense, #compare__container #compare__right .defense {
+  background-color: #fae078;
+}
+#compare__container #compare__left .special-attack, #compare__container #compare__right .special-attack {
+  background-color: #ab82ff;
+}
+#compare__container #compare__left .special-defense, #compare__container #compare__right .special-defense {
+  background-color: #78c850;
+}
+#compare__container #compare__left .speed, #compare__container #compare__right .speed {
+  background-color: #6890f0;
 }
 #compare__container #compare__left .btn__container, #compare__container #compare__right .btn__container {
   display: flex;

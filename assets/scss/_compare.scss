@@ -111,8 +111,48 @@ h1{
                 }
             }
         }
-        .stat-bar-container{
-            margin: 3px 0;
+        .stat-bar-container {
+            width: 100%;
+            background-color: #e0e0df;
+            border-radius: 25px;
+            overflow: hidden;
+            margin-top: 2%;
+          }
+          
+          .stat-bar {
+            height: 20px;
+            border-radius: 25px;
+            text-align: right;
+            padding-right: 5px;
+            color: white;
+            line-height: 20px;
+            width: 0; 
+            transition: width 2s ease;
+          }
+          
+          .hp {
+            background-color: #ff5959;
+          }
+          
+          .attack {
+            background-color: #f5ac78;
+          }
+          
+          .defense {
+            background-color: #fae078;
+          }
+          
+          .special-attack {
+            background-color: #ab82ff;
+          }
+          
+          .special-defense {
+            background-color: #78c850;
+          }
+          
+          .speed {
+            background-color: #6890f0;
+          }
         }
         .btn__container{
             display: flex;
