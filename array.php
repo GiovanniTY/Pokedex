@@ -3,7 +3,7 @@ include('./login-register/config.php');
 
 try {
     // Query pour selectioner les noms des pokemons
-    $stmt = $pdo->query('SELECT name FROM Pokemon');
+    $stmt = $pdo->query('SELECT name FROM pokemon');
     $pokemonNames = $stmt->fetchAll(PDO::FETCH_COLUMN);
 } catch (PDOException $e) {
     echo '<script>alert("Errore: ' . $e->getMessage() . '");</script>';

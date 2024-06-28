@@ -3,6 +3,7 @@ import { favorite } from "./component/favorite.js";
 import { filter } from "./component/filter.js";
 import { popup } from "./component/popup.js";
 import { navDetails } from "./component/nav.js";
+import { setupAutocomplete } from "./component/autosuggestion.js";
 
 function toggleDarkMode() {
   const darkModeToggle = document.getElementById("dark-mode-toggle");
@@ -84,6 +85,7 @@ filter();
 compare();
 popup();
 navDetails();
+setupAutocomplete();
 
 document.addEventListener("DOMContentLoaded", function () {
   const searchBar = document.getElementById("search-bar");
