@@ -1,13 +1,15 @@
+
+
 // Définir la fonction animateProgressBar comme export
 export function animateProgressBar(barId, value) {
-    const bar = document.getElementById(barId);
+    let bar = document.getElementById(barId);
     if (bar) {
         // Animer la largeur de la barre progressivement
         let width = 0;
-        let interval = 20; // Interval de mise à jour de la largeur (en ms)
+        let interval = 20;
         let step = value / (2000 / interval); // Calcul du pas en fonction de la durée (2s)
 
-        const timer = setInterval(function() {
+        let timer = setInterval(function() {
             width += step;
             if (width >= value) {
                 clearInterval(timer);
@@ -23,9 +25,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const hpBarContainer = document.querySelector('.stat-bar-container[data-hp]');
     const attackBarContainer = document.querySelector('.stat-bar-container[data-attack]');
     const defenseBarContainer = document.querySelector('.stat-bar-container[data-defense]');
-    const specialAttackBarContainer = document.querySelector('.stat-bar-container[data-attackSpecial]'); 
-    const specialDefenseBarContainer = document.querySelector(".stat-bar-container[data-defenseSpecial]");
-    const speedBarContainer = document.querySelector(".stat-bar-container[data-speed]");
+    const specialAttackBarContainer = document.querySelector('.stat-bar-container[data-attackSpecial]');
+    const specialDefenseBarContainer = document.querySelector('.stat-bar-container[data-defenseSpecial]');
+    const speedBarContainer = document.querySelector('.stat-bar-container[data-speed]');
 
     if (hpBarContainer) {
         const hpValue = parseInt(hpBarContainer.getAttribute('data-hp'));

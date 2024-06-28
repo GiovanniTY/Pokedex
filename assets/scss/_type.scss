@@ -38,6 +38,7 @@
 .Électrik{
     background-color: #edd434; /* Jaune */
     color: #edf7ff; /* Jaune foncé */
+
 }
 
 /* Poison */
@@ -60,8 +61,20 @@
 
 /* Fée */
 .fée {
+
+    background-color: #EE99AC; /* Rose */
+    color: #8C4D5B; /* Rose foncé */
+}
+.clefairy {
+    background-color: #EE99AC; /* Rose */
+    color: #8C4D5B; /* Rose foncé */
+}
+.clefable {
+    background-color: #EE99AC; /* Rose */
+    color: #8C4D5B; /* Rose foncé */
     background-color: #fcb8e8; /* Rose */
     color: #edf7ff; /* Rose foncé */
+
 }
 
 /* Combat */
@@ -98,4 +111,10 @@
 .dragon {
     background: linear-gradient(to bottom, #53a3cf, #f26e57);
     color: #edf7ff; /* Violet foncé */
+}
+
+/* Ténebre */
+.ténèbres {
+    background-color: #4B0082; /* Indigo */
+    color: #ebb5f4; /* Dark Purple */
 }
