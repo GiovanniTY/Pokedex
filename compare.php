@@ -43,7 +43,7 @@ try {
         ?>
             <a href="./login-register/register.php">Register</a>
         <?php } ?>
-
+        <a href="./index.php">Return to homepage</a>
     </nav>
     <main>
         <img id="logo" src="assets/img/logo.png" alt="logo">

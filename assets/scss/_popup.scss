@@ -1,0 +1,15 @@
+#add__popup{
+    display: none;
+    position: fixed;
+    bottom: 5px;
+    right: 5px;
+    z-index: 1;
+    width: 225px;
+    height: auto;
+    border: 1px solid #333;
+    background-color: var(--background);
+    padding: 10px;
+    border-radius: 15px;
+    overflow: hidden;
+    text-align: center;
+}

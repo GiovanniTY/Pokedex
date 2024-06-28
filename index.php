@@ -32,8 +32,14 @@ session_start();
         if (isset($_SESSION["user"])) {
         ?>
             <a href="./login-register/logout.php">Logout</a>
-            <a href="./login-register/profile.php"><img class="avatar-img"src="<?php echo $_SESSION['user']['avatar']?>" alt="avatar"></a>
-        <?php   }
+            <?php
+            if ($_SESSION['user']['role'] === 'admin') {
+            ?>
+                <a href="dashboard.php">Dashboard</a>
+            <?php   } ?>
+            <a href="./login-register/profile.php"><img class="avatar-img" src="<?php echo $_SESSION['user']['avatar'] ?>" alt="avatar"></a>
+        <?php
+        }
         if (!isset($_SESSION["user"])) {
 
         ?>
@@ -48,11 +54,10 @@ session_start();
         </button>
         <div class="search-container">
             <form method="GET" action="">
-                <input type="text" name="search" id="search-bar" 
-                placeholder="Rechercher des Pokémon par leur nom..." autocomplete="off">
+                <input type="text" name="search" id="search-bar" placeholder="Rechercher des Pokémon par leur nom..." autocomplete="off">
                 
-                <button id="search"  type="submit">
-                    <img id="pikachu"src="assets/img/pikachu.png"alt="pikachu">
+                <button id="search" type="submit">
+                    <img id="pikachu" src="assets/img/pikachu.png" alt="pikachu">
                 </button>
                 <datalist id="suggestions" class="suggestions-container"></>
             </form>
@@ -66,32 +71,32 @@ session_start();
         </div>
         <div id="suggestions" class="suggestions-container"></div>
         
-        
-        <div  id="card-container" class="pokedex-container">
+
+        <div id="card-container" class="pokedex-container">
             <?php
             include('function.php');
             include('search.php');
 
             foreach ($pokemonList as $pokemon) : ?>
-             <a href="details.php?id=<?php echo $pokemon['id']; ?>">
-                <div class="pokemon-card">
-                    <span class="material-symbols-outlined">favorite</span>
-                    <img src="<?php echo $pokemon['image']; ?>" alt="<?php echo $pokemon['name']; ?>">
-                    <p class="pokedex-id"><?php if ($pokemon['pokedexId'] < 10) {
-                        echo '#000' . $pokemon['pokedexId'];
-                    } else if ($pokemon['pokedexId'] < 100) {
-                        echo '#00' . $pokemon['pokedexId'];
-                    } else if($pokemon['pokedexId']<1000){
-                        echo '#0'. $pokemon['pokedexId'];
-                    }?></p>
-                    <h2><?php echo $pokemon['name']; ?></h2>
-                    <div class="type">
-                        <span class="<?php echo strtolower($pokemon['type1']); ?>"><?php echo $pokemon['type1']; ?></span>
-                        <?php if (!empty($pokemon['type2'])) : ?>
-                        <span class="<?php echo strtolower($pokemon['type2']); ?>"><?php echo $pokemon['type2']; ?></span>
-                        <?php endif; ?>
+                <a href="details.php?id=<?php echo $pokemon['id']; ?>">
+                    <div class="pokemon-card">
+                        <span class="material-symbols-outlined favoriteSpan">favorite</span>
+                        <img src="<?php echo $pokemon['image']; ?>" alt="<?php echo $pokemon['name']; ?>">
+                        <p class="pokedex-id"><?php if ($pokemon['pokedexId'] < 10) {
+                                                    echo '#000' . $pokemon['pokedexId'];
+                                                } else if ($pokemon['pokedexId'] < 100) {
+                                                    echo '#00' . $pokemon['pokedexId'];
+                                                } else if ($pokemon['pokedexId'] < 1000) {
+                                                    echo '#0' . $pokemon['pokedexId'];
+                                                } ?></p>
+                        <h2><?php echo $pokemon['name']; ?></h2>
+                        <div class="type">
+                            <span class="<?php echo strtolower($pokemon['type1']); ?>"><?php echo $pokemon['type1']; ?></span>
+                            <?php if (!empty($pokemon['type2'])) : ?>
+                                <span class="<?php echo strtolower($pokemon['type2']); ?>"><?php echo $pokemon['type2']; ?></span>
+                            <?php endif; ?>
+                        </div>
                     </div>
-                </div>
                 </a>
             <?php endforeach; ?>
         </div>
