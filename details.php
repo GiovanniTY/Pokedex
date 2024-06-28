@@ -112,7 +112,7 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
                             ?>
                         
 		
-		<span class="animation" aria-hidden="true">
+		<span class="animation" aria-hidden="true" id="pokedexId">
         <?php 
                                 if ($pokemon['pokedexId'] < 10) {
                                     echo '#000' . $pokemon['pokedexId'];

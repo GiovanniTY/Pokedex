@@ -11,7 +11,7 @@ export function compare() {
                 const pokemon = {
                     name: document.querySelector("h1").innerText,
                     image: document.querySelector(".pokemon-img").src,
-                    id: document.querySelector(".pokedex-id").innerText,
+                    id: document.querySelector("#pokedexId").innerText,
                     type : [document.querySelector(".type").children[0].innerText, (document.querySelector(".type").children[1]!=null)? document.querySelector(".type").children[1].innerText:""],
                     hp : document.querySelector(".hp").style.width,
                     attack : document.querySelector(".attack").style.width,
@@ -21,6 +21,7 @@ export function compare() {
                     speed : document.querySelector(".speed").style.width
                 }
                 compareArray.push(pokemon)
+                console.log(compareArray)
                 Set("compare", compareArray)
                 checkAndApplyOpacity()
             }
