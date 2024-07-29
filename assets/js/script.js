@@ -59,7 +59,7 @@ function toggleDarkMode() {
 }
 
 
-toggleDarkMode();
+toggleDarkMode();   
 
 
 document.addEventListener('DOMContentLoaded', function() {
